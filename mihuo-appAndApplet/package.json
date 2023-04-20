@@ -1,0 +1,20 @@
+{
+	"uni-app": {
+		"scripts": {
+			"custom-platform": {
+				"title": "app",
+				"browser": "",
+				"env": {
+					"UNI_PLATFORM": "h5",
+					"MY_TEST": ""
+				},
+				"define": {
+					"CUSTOM-CONST": true
+				}
+			}
+		}
+	},
+	"dependencies": {
+		"html2canvas": "^1.4.1"
+	}
+}

@@ -1,0 +1,72 @@
+@charset "utf-8";
+@import './theme.scss';
+//主题色
+@mixin theme($type,$path:''){
+	@if $type == "btn_bg" {
+		background-image: linear-gradient(90deg,$themeColor 0%,$themeColor 100%);
+	} @else if $type == "unselected_img" {
+		background-image: url($path + "static/icon/ic_gender_unselected.png");
+	} @else if $type == "check_img" {
+		background-image: url($path + "static/icon/ic_agreed.png");
+	} @else if $type == "radio_img" {
+		background-image: url($path + "static/icon/ic_gender_selected.png");
+	}
+}
+
+// 背景图片地址和大小
+@mixin bis($url, $size: cover) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: $size;
+}
+
+// 头像
+@mixin ic($width, $height) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  width: $width;
+  height: $height;
+}
+
+// 单行省略号
+@mixin toe() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
+}
+
+// 多行省略号
+@mixin bov($num:2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $num;
+  -webkit-box-orient: vertical;
+}
+
+// 导航栏标题
+@mixin nav-bar-title($fontColor: #ffffff) {
+	font-family: PingFang SC;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 32rpx;
+	line-height: 50rpx;
+	text-align: center;
+	color: $fontColor;
+}
+
+//安全区处理
+@mixin safearea(){
+	bottom: 0;
+	bottom: calc(constant(safe-area-inset-bottom));
+	bottom: calc(env(safe-area-inset-bottom));  
+}
+@mixin buttonsafearea(){
+	bottom: 0;
+	padding-bottom: calc(constant(safe-area-inset-bottom));
+	padding-bottom: calc(env(safe-area-inset-bottom));  
+}

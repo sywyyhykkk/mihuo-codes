@@ -1,0 +1,413 @@
+{
+    "name" : "觅活工匠",
+    "appid" : "__UNI__183C0D4",
+    "description" : "值得工匠信赖的互联网装修平台",
+    "transformPx" : false,
+    "icons" : [
+        {
+            "sizes" : "分辨率，192x192",
+            "src" : "图片路径"
+        }
+    ],
+    "versionName" : "3.4.9",
+    "versionCode" : 349,
+    "app-plus" : {
+        "cers" : {
+            //可选，JSON对象，应用的异常崩溃与错误报告系统配置
+            "crash" : true //可选，Boolean类型，是否提交应用异常崩溃信息
+        },
+        "cache" : {
+            //可选，JSON对象，Webview窗口默认使用的缓存模式，uni-app项目已废弃
+            "mode" : "default" //可选，字符串类型，可取值default、cacheElseNetwork、noCache、cacheOnly
+        },
+        "kernel" : {
+            //可选，JSON对象，webview内核配置
+            "ios" : "WKWebview", //可选，iOS平台使用的webview类型，可取值WKWebview、UIWebview
+            "recovery" : "restart" //可选，iOS平台使用WKWebview时，内核崩溃后的处理逻辑，可取值restart、reload、none
+        },
+        "nvueStyleCompiler" : "uni-app",
+        "scrollIndicator" : "none",
+        "safearea" : {
+            //iOS平台的安全区域
+            "background" : "#FFFFFF",
+            "backgroundDark" : "#2f0508", // HX 3.1.19+支持
+            "bottom" : {
+                "offset" : "none"
+            }
+        },
+        "runmode" : "liberate",
+        "compatible" : {
+            "ignoreVersion" : true
+        },
+        "privacy" : {
+            "prompt" : "template",
+            "template" : {
+                "title" : "用户协议和隐私政策",
+                "message" : "请你务必审慎阅读、充分理解“隐私政策”各条款，包括但不限于：为了更好的向你提供服务，我们需要收集你的设备标识、操作日志等信息用于分析、优化应用性能。<br/>　　你可阅读<a href='https://www.twin-ui.com'>《用户协议》</a>和<a href='https://www.twin-ui.com'>《隐私政策》</a>了解详细信息。如果你同意，请点击下面按钮开始接受我们的服务。",
+                "buttonAccept" : "同意",
+                "buttonRefuse" : "暂不同意"
+            }
+        },
+        "modules" : {
+            "OAuth" : {},
+            "VideoPlayer" : {},
+            "Push" : {},
+            "SQLite" : {},
+            "Speech" : {},
+            "Maps" : {},
+            "Geolocation" : {},
+            "Webview-x5" : {},
+            "Share" : {},
+            "Statistic" : {},
+            "Payment" : {}
+        },
+        "distribute" : {
+            "distribute" : {
+                "orientation" : [ "portrait-primary" ] //重力感应、横竖屏配置
+            },
+            "apple" : {
+                "devices" : "universal"
+            },
+            "android" : {
+                "permissionPhoneState" : {
+                    "request" : "none",
+                    "prompt" : "为保证您正常、安全地使用，需要获取设备识别码（部分手机提示为获取手机号码）使用权限，请允许。"
+                },
+                "permissionExternalStorage" : {
+                    "request" : "none",
+                    "prompt" : "应用保存运行状态等信息，需要获取读写手机存储（系统提示为访问设备上的照片、媒体内容和文件）权限，请允许。"
+                },
+                "permissions" : [
+                    "<uses-feature android:name=\"android.hardware.camera\"/>",
+                    "<uses-feature android:name=\"android.hardware.camera.autofocus\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.BIND_INPUT_METHOD\"/>",
+                    "<uses-permission android:name=\"android.permission.CALL_PHONE\"/>",
+                    "<uses-permission android:name=\"android.permission.CAMERA\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_NETWORK_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.FLASHLIGHT\"/>",
+                    "<uses-permission android:name=\"android.permission.INSTALL_PACKAGES\"/>",
+                    "<uses-permission android:name=\"android.permission.INTERNET\"/>",
+                    "<uses-permission android:name=\"android.permission.MODIFY_AUDIO_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_LOGS\"/>",
+                    "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\"/>",
+                    "<uses-permission android:name=\"android.permission.RECEIVE_BOOT_COMPLETED\"/>",
+                    "<uses-permission android:name=\"android.permission.RECORD_AUDIO\"/>",
+                    "<uses-permission android:name=\"android.permission.REQUEST_INSTALL_PACKAGES\"/>",
+                    "<uses-permission android:name=\"android.permission.SYSTEM_ALERT_WINDOW\"/>",
+                    "<uses-permission android:name=\"android.permission.VIBRATE\"/>",
+                    "<uses-permission android:name=\"android.permission.WAKE_LOCK\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\"/>",
+                    "<uses-permission android:name=\"android.permission.WRITE_SETTINGS\"/>",
+                    "<uses-permission android:name=\"android.permission.RECEIVE_USER_PRESENT\"/>"
+                ],
+                "abiFilters" : [ "armeabi-v7a", "arm64-v8a", "x86" ],
+                "schemes" : "mihuodeliver",
+                "minSdkVersion" : 24
+            },
+            "sdkConfigs" : {
+                "ad" : {},
+                "maps" : {
+                    "amap" : {
+                        "appkey_ios" : "bee0818b76632b1cba74aa6379228657",
+                        "appkey_android" : "bbb099760bb0e7cd8093cb68ff812026"
+                    }
+                },
+                "share" : {
+                    "weixin" : {
+                        "appid" : "wx22bf302e6d5bc0fa",
+                        "UniversalLinks" : "https://www.51mihuo.com/deliver/"
+                    }
+                },
+                "push" : {
+                    "unipush" : {
+                        "icons" : {
+                            "small" : {
+                                "ldpi" : "unpackage/res/drawable-ldpi/push_small.png",
+                                "mdpi" : "unpackage/res/drawable-mdpi/push_small.png",
+                                "hdpi" : "unpackage/res/drawable-hdpi/push_small.png",
+                                "xhdpi" : "unpackage/res/drawable-xhdpi/push_small.png",
+                                "xxhdpi" : "unpackage/res/drawable-xxhdpi/push_small.png"
+                            }
+                        },
+                        "offline" : true,
+                        "hms" : {},
+                        "oppo" : {},
+                        "vivo" : {},
+                        "mi" : {},
+                        "meizu" : {}
+                    }
+                },
+                "speech" : {
+                    "ifly" : {}
+                },
+                "geolocation" : {},
+                "oauth" : {
+                    "univerify" : {},
+                    "apple" : {},
+                    "weixin" : {
+                        "appid" : "wx22bf302e6d5bc0fa",
+                        "appsecret" : "",
+                        "UniversalLinks" : "https://www.51mihuo.com/deliver/"
+                    }
+                },
+                "statics" : {},
+                "payment" : {
+                    "alipay" : {
+                        "__platform__" : [ "ios", "android" ]
+                    },
+                    "weixin" : {
+                        "__platform__" : [ "ios", "android" ],
+                        "appid" : "wx22bf302e6d5bc0fa",
+                        "UniversalLinks" : "https://www.51mihuo.com/deliver/"
+                    },
+                    "appleiap" : {}
+                }
+            },
+            "splashscreen" : {
+                "iosStyle" : "storyboard",
+                "androidStyle" : "default",
+                "android" : {
+                    "hdpi" : "guide@1x.9.png",
+                    "xhdpi" : "guide@2x.9.png",
+                    "xxhdpi" : "guide@3x.9.png"
+                },
+                "useOriginalMsgbox" : true,
+                "ios" : {
+                    "storyboard" : "/Users/zjy/Desktop/觅活其他文件/deliver/CustomStoryboard.zip"
+                }
+            },
+            "icons" : {
+                "android" : {
+                    "hdpi" : "unpackage/res/icons/72x72.png",
+                    "xhdpi" : "unpackage/res/icons/96x96.png",
+                    "xxhdpi" : "unpackage/res/icons/144x144.png",
+                    "xxxhdpi" : "unpackage/res/icons/192x192.png"
+                },
+                "ios" : {
+                    "appstore" : "unpackage/res/icons/1024x1024.png",
+                    "ipad" : {
+                        "app" : "unpackage/res/icons/76x76.png",
+                        "app@2x" : "unpackage/res/icons/152x152.png",
+                        "notification" : "unpackage/res/icons/20x20.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "proapp@2x" : "unpackage/res/icons/167x167.png",
+                        "settings" : "unpackage/res/icons/29x29.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "spotlight" : "unpackage/res/icons/40x40.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png"
+                    },
+                    "iphone" : {
+                        "app@2x" : "unpackage/res/icons/120x120.png",
+                        "app@3x" : "unpackage/res/icons/180x180.png",
+                        "notification@2x" : "unpackage/res/icons/40x40.png",
+                        "notification@3x" : "unpackage/res/icons/60x60.png",
+                        "settings@2x" : "unpackage/res/icons/58x58.png",
+                        "settings@3x" : "unpackage/res/icons/87x87.png",
+                        "spotlight@2x" : "unpackage/res/icons/80x80.png",
+                        "spotlight@3x" : "unpackage/res/icons/120x120.png"
+                    }
+                }
+            },
+            "ios" : {
+                "capabilities" : {
+                    "entitlements" : {
+                        "com.apple.developer.associated-domains" : [ "applinks:www.51mihuo.com" ]
+                    }
+                },
+                "urltypes" : "mihuodeliver",
+                "privacyDescription" : {
+                    "NSPhotoLibraryUsageDescription" : "用与用户能够上传施工图片",
+                    "NSPhotoLibraryAddUsageDescription" : "用于用户能够保存自己需要保存的图片",
+                    "NSCameraUsageDescription" : "用于用户拍照和实名认证",
+                    "NSMicrophoneUsageDescription" : "用于用户聊天时语言发送，和用户其他信息的快捷录入",
+                    "NSLocationWhenInUseUsageDescription" : "用于获取用户位置获取用户所在城市的服务",
+                    "NSLocationAlwaysUsageDescription" : "时时更新推荐给用户的服务",
+                    "NSLocationAlwaysAndWhenInUseUsageDescription" : "用户给用户推荐用户所在的城市服务",
+                    "NSContactsUsageDescription" : "用户获取用户的通讯录，方便用户在应用上找到自己的好友",
+                    "NSSpeechRecognitionUsageDescription" : "语音转文字，便于查看",
+                    "NSLocalNetworkUsageDescription" : "我们需要访问您的网络状态来判断您的设备是否网络正常",
+                    "NSUserTrackingUsageDescription" : "我们需要获取您的广告追踪权限来判断该设备是否是您的常用设备"
+                },
+                "dSYMs" : false
+            }
+        },
+        "compilerVersion" : 3,
+        "nvueLaunchMode" : "",
+        "uniStatistics" : {
+            "enable" : true,
+            "debug" : false
+        },
+        "nativePlugins" : {
+            "AliyunDeviceModule" : {
+                "__plugin_info__" : {
+                    "name" : "AliyunDeviceModule",
+                    "description" : "AliyunDeviceModule",
+                    "platforms" : "Android,iOS",
+                    "url" : "",
+                    "android_package_name" : "",
+                    "ios_bundle_id" : "",
+                    "isCloud" : false,
+                    "bought" : -1,
+                    "pid" : "",
+                    "parameters" : {}
+                }
+            },
+            "DCloud-PushSound" : {
+                "__plugin_info__" : {
+                    "name" : "DCloud-PushSound",
+                    "description" : "自定义推送铃声",
+                    "platforms" : "Android,iOS",
+                    "url" : "",
+                    "android_package_name" : "",
+                    "ios_bundle_id" : "",
+                    "isCloud" : false,
+                    "bought" : -1,
+                    "pid" : "",
+                    "parameters" : {}
+                }
+            },
+            "CL-FileBrower" : {
+                "__plugin_info__" : {
+                    "name" : "app文件选择工具",
+                    "description" : "文件选择工具,支持ios,android",
+                    "platforms" : "Android,iOS",
+                    "url" : "https://ext.dcloud.net.cn/plugin?id=7686",
+                    "android_package_name" : "uni.UNI183C0D4",
+                    "ios_bundle_id" : "uni.UNI183C0D4",
+                    "isCloud" : true,
+                    "bought" : 1,
+                    "pid" : "7686",
+                    "parameters" : {}
+                }
+            },
+            "Super-Module-ScreenshotListen" : {
+                "__plugin_info__" : {
+                    "name" : "Super-ScreenshotListen 截屏监听插件",
+                    "description" : "监听系统截屏事件，返回截图图片路径。",
+                    "platforms" : "Android,iOS",
+                    "url" : "https://ext.dcloud.net.cn/plugin?id=5791",
+                    "android_package_name" : "uni.UNI183C0D4",
+                    "ios_bundle_id" : "uni.UNI183C0D4",
+                    "isCloud" : true,
+                    "bought" : 1,
+                    "pid" : "5791",
+                    "parameters" : {}
+                }
+            },
+            "MihuoPaster-Func" : {
+                "__plugin_info__" : {
+                    "name" : "MihuoPaster-Func ios",
+                    "description" : "api 格式",
+                    "platforms" : "iOS",
+                    "url" : "",
+                    "android_package_name" : "",
+                    "ios_bundle_id" : "",
+                    "isCloud" : false,
+                    "bought" : -1,
+                    "pid" : "",
+                    "parameters" : {}
+                }
+            }
+        },
+        "splashscreen" : {
+            "waiting" : false
+        }
+    },
+    // 5+App特有相关
+    "quickapp" : {},
+    // 快应用特有相关
+    "mp-weixin" : {
+        "setting" : {
+            "urlCheck" : false,
+            "es6" : true,
+            "postcss" : true,
+            "minified" : true
+        },
+        "usingComponents" : true,
+        "appid" : "wx4e56314c49d15d66",
+        "permission" : {
+            "scope.userLocation" : {
+                "desc" : "你的位置信息将用于小程序位置接口的效果展示"
+            }
+        },
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "h5" : {
+        "template" : "template.h5.html",
+        "publicPath" : "/",
+        "router" : {
+            "mode" : "history",
+            "base" : "/"
+        },
+        "devServer" : {
+            "port" : 9003,
+            "proxy" : {
+                "/h5" : {
+                    "target" : "http://dev.51mihuo.com:9999",
+                    "changeOrigin" : true,
+                    "pathRewrite" : {
+                        "^/h5" : ""
+                    }
+                }
+            },
+            "https" : false
+        },
+        "optimization" : {
+            "treeShaking" : {
+                "enable" : false
+            }
+        },
+        "uniStatistics" : {
+            "enable" : false
+        },
+        "title" : "觅活工匠",
+        "sdkConfigs" : {
+            "maps" : {
+                "qqmap" : {
+                    "key" : ""
+                }
+            }
+        }
+    },
+    "uniStatistics" : {
+        "enable" : false,
+        "version" : "2",
+        "reportInterval" : "100"
+    },
+    "mp-alipay" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "mp-baidu" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "mp-kuaishou" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "mp-qq" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "mp-toutiao" : {
+        "uniStatistics" : {
+            "enable" : false
+        }
+    },
+    "_spaceID" : "47401e77-fab5-4493-9ac0-c2fafe8f4fb8"
+}
+// 小程序特有相关
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>文件上传</title>
+	</head>
+	<body>
+		<input type="file" id="myfile" value="" name="file" />
+		<!-- uni 的 SDK -->
+		<script type="text/javascript" src="https://js.cdn.aliyun.dcloud.net.cn/dev/uni-app/uni.webview.1.5.2.js">
+		</script>
+		<script type="text/javascript" src="https://cdn.bootcss.com/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+		<script type="text/javascript" src="js/signclient.js"></script>
+		<script type="text/javascript">
+
+			// 地址栏参数
+			function getQueryString(key) {
+				var reg = new RegExp('(^|&)' + key + '=([^&]*)(&|$)')
+				var r = window.location.search.substr(1).match(reg)
+				if (r != null) return unescape(r[2])
+				return null
+			}
+
+			var info = getQueryString('info');
+			info = JSON.parse(decodeURIComponent(info));
+			var url = info.url;
+			var header = info.header;
+			console.log(header.Authorization);
+			var uploader = document.getElementById('myfile');
+			document.addEventListener('UniAppJSBridgeReady', () => {
+				uploader.addEventListener("change", function(e) {
+					var form = new FormData();
+					var fileData = uploader.files[0]
+
+					// alert(JSON.stringify(fileData.name))
+
+					form.append("file", fileData);
+					
+					// 以下是XMLHttpRequest上传文件的简单post请求
+					var xhrForm = new XMLHttpRequest();
+					xhrForm.open("POST", url, true);
+
+					// xhrForm.ontimeout = function() {
+					// 	console.log("请求超时")
+					// };
+
+					// xhrForm.onload = function(e) {
+					// 	// console.log("上传成功",e); //上传成功
+					// };
+
+					// // 请求完成
+					// xhrForm.onreadystatechange = () => {
+					// 	if (xhrForm.readyState == 4) {
+					// 		if (xhrForm.status == 200) {
+					// 			console.log("上传成功");
+					// 			sendMessage()
+					// 		} else { // 失败
+					// 			for (let keys in header) {
+					// 				console.log(xhrForm[key]);
+					// 			}
+					// 			console.log("上传失败");
+					// 		}
+					// 	}
+					// }
+
+					// 设置请求头
+					for (let keys in header) {
+						xhrForm.setRequestHeader(keys, header[keys])
+					}
+				
+					console.log(form.values);
+					xhrForm.send(form);
+
+				}, false);
+			})
+
+			// 发送文件数据
+			function sendMessage(data) {
+				uni.postMessage({
+					data: {
+						action: data,
+					}
+				});
+			}
+		</script>
+	</body>
+
+</html>

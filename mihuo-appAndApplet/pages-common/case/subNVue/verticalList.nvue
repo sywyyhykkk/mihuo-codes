@@ -1,0 +1,300 @@
+<template>
+	<view class="vertical-list">
+		<view class="screening" @touchstart="start" @touchend="end" @touchmove="move">
+			<view class="tensile">
+				<text class="tensile-text"></text>
+			</view>
+			<view class="type-contain">
+				<picker @change="bindPickerChange($event, 1)" :value="modelIndex" range-key="label" :range="modelArray">
+					<text class="item-type" :style="{color: modelIndex === 0 ? '#999999' : '#FE6E32'}">{{ modelArray[modelIndex].label }}</text>
+				</picker>
+				<picker @change="bindPickerChange($event, 2)" :value="areaIndex" range-key="label" :range="areaArray">
+					<text class="item-type" :style="{color: areaIndex === 0 ? '#999999' : '#FE6E32'}">{{ areaArray[areaIndex].label }}</text>
+				</picker>
+				<picker @change="bindPickerChange($event, 3)" :value="styleIndex" range-key="label" :range="styleArray">
+					<text class="item-type" :style="{color: styleIndex === 0 ? '#999999' : '#FE6E32'}">{{ getSubString(styleArray[styleIndex].label) }}</text>
+				</picker>
+				<text class="item-type" @click="changePriceSort">价格</text>
+			</view>
+		</view>
+		<scroll-view :scroll-top="scrollTop" :show-scrollbar="false" scroll-y="true" :scroll-with-animation="true" :scroll-into-view="scrollIntoView"
+			:style="{ 'height': scrollHeight }" @scrolltoupper="upper" @scrolltolower="lower" @scroll="scroll">
+			<view v-for="(item, index) in list" :key="index" :id="`content-${item.id}`">
+				<common-mh-construction-case :formData="item" @toPageConstruction="toPageConstruction"></common-mh-construction-case>
+			</view>
+		</scroll-view>
+		<view v-if="tagStatus" class="map-tag" @click="getShow()">
+			<image class="img" src="@/pages-common/static/images/case/dt.png" mode=""></image>
+			<text class="text">地图</text>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				scrollIntoView: '',
+				priceSort: 'PRICE_ASC',
+				modelArray: [{
+					value: '',
+					label: '全部户型'
+				}],
+				areaArray: [{
+					value: '',
+					label: '全部面积'
+				}],
+				styleArray: [{
+					value: '',
+					label: '全部风格'
+				}],
+				modelIndex: 0,
+				areaIndex: 0,
+				styleIndex: 0,
+				scrollTop: 0,
+				scrollHeight: '700rpx',
+				height: '700rpx',
+				startData: {
+					clientX: '',
+					clientY: '',
+				},
+				direction: '',
+				touch: {},
+				latitude: 24.8801,
+				longitude: 102.8329,
+				initialHeight: 444,
+				tagStatus: true,
+				endHeight: 0,
+				bottomHeight: 0,
+				mobileDistance: 600,
+				mobileDistanceTransit: 0,
+				list: [],
+			}
+		},
+		onShow() {
+			uni.$on('scrollToView', (data) => {
+				this.scrollIntoView = `content-${data}`
+			})
+			uni.$on('updateData', (data) => {
+				this.getData()
+			})
+			if (uni.getStorageSync("latitude") && uni.getStorageSync("longitude")) {
+				this.latitude = uni.getStorageSync("latitude")
+				this.longitude = uni.getStorageSync("longitude")
+			}
+			this.getData()
+			this.setOptionsList()
+		},
+		onHide() {
+			uni.$off('scrollToView')
+			uni.$off('updateData')
+		},
+		methods: {
+			setOptionsList(){
+				this.modelArray.push(...uni.getStorageSync('House_Type'))
+				this.areaArray.push(...uni.getStorageSync('House_Area'))
+				this.styleArray.push(...uni.getStorageSync('House_Style'))
+			},
+			getData() {
+				this.list = uni.getStorageSync('Construction_List')
+			},
+			getSubString(str){
+				if(str.length <= 4){
+					return str
+				}
+				return str.substring(0, 5) + '...'
+			},
+			changePriceSort(){
+				this.priceSort === 'PRICE_ASC' ? 'PRICE_DESC' : 'PRICE_ASC'
+			},
+			bindPickerChange(e, type) {
+				switch (type) {
+					case 1:
+						this.modelIndex = e.detail.value
+						uni.$emit('ConstructionListUpdate', this.modelArray[this.modelIndex])
+						this.getData()
+						break
+					case 2:
+						this.areaIndex = e.detail.value
+						break
+					case 3:
+						this.styleIndex = e.detail.value
+						break
+				}
+			},
+			getShow() {
+				this.endHeight = 0
+				this.mobileDistanceTransit = 0
+				this.initialHeight = 444
+				this.mobileDistance = 700
+				this.scrollHeight = '700rpx'
+				this.height = '700rpx'
+				// 隐藏列表
+				const subNVue = uni.getSubNVueById('verticalList')
+				subNVue.hide('', 0);
+				// 显示列表按钮
+				const tableswitch = uni.getSubNVueById('tableswitch')
+				tableswitch.show('fade-in', 100, function() {
+					// 打开后进行一些操作...
+					//
+				});
+				// 显示卡片
+				const consumerSiteService = uni.getSubNVueById('consumerSiteService')
+				consumerSiteService.show('slide-in-bottom', 100, function() {
+					// 打开后进行一些操作...
+					//
+				});
+			},
+			upper() {
+				// console.log("顶部。。。")
+			},
+			lower() {
+				// console.log("底部。。。")
+			},
+			scroll() {},
+			toPageConstruction(id) {
+				uni.navigateTo({
+					url: `/pages-common/case/construction/details?id=${id}`
+				});
+			},
+			start(e) {
+				this.startData.clientY = e.changedTouches[0].screenY; //手指按下时的Y坐标
+				this.tagStatus = false
+			},
+			end() {
+				const subNVue = uni.getSubNVueById('verticalList')
+				this.tagStatus = true
+				if (this.direction === 'top') {
+					this.initialHeight = this.endHeight
+					this.mobileDistance = this.mobileDistanceTransit
+				} else {
+					this.initialHeight = this.bottomHeight
+					this.endHeight = this.bottomHeight
+				}
+			},
+			move(event) {
+				let touch = event.touches[0]; //滑动过程中，手指滑动的坐标信息 返回的是Objcet对象
+				this.touch = touch;
+				let tempScrollHeight
+				const subNVue = uni.getSubNVueById('verticalList')
+				if (Number(touch.screenY) < Number(this.startData.clientY)) { // 向上滑动
+					tempScrollHeight = this.initialHeight + (this.startData.clientY - touch.screenY)
+					this.direction = 'top'
+				} else if (Number(touch.screenY) > Number(this.startData.clientY)) { // 向下滑动
+					if (this.endHeight) {
+						tempScrollHeight = this.endHeight - (touch.screenY - this.startData.clientY)
+					} else {
+						tempScrollHeight = 400 - (touch.screenY - this.startData.clientY)
+					}
+					this.direction = 'bottom'
+				}
+				if (tempScrollHeight < (uni.getStorageSync('screenHeight') - 150)) { // 最大高度
+					if (this.direction === 'top') {
+						this.scrollHeight = (Math.ceil(this.mobileDistance + Number(this.startData.clientY - touch
+							.screenY) * 2)) + 'rpx '
+						this.mobileDistanceTransit = Number(this.scrollHeight.replace('rpx', ''))
+						subNVue.setStyle({
+							height: tempScrollHeight
+						})
+						this.endHeight = tempScrollHeight
+					} else {
+						if (tempScrollHeight > 0) {
+							this.mobileDistanceTransit = Number(this.scrollHeight.replace('rpx', ''))
+							subNVue.setStyle({
+								height: tempScrollHeight + '',
+							})
+							this.bottomHeight = tempScrollHeight
+						}
+						if (tempScrollHeight < 100) { // 隐藏列表，显示卡片
+							setTimeout(() => {
+								this.touch = {};
+								this.getShow()
+							}, 300)
+						}
+					}
+				}
+			}
+		}
+	}
+</script>
+
+<style lang="scss" scoped>
+	@import "@/style/mixin.scss";
+	
+	.vertical-list {
+		background-color: #FFFFFF;
+		border-radius: 10rpx 10rpx 0rpx 0rpx;
+		background-color: #FFFFFF;
+
+		.screening {
+			background: #F6F6F6;
+			border-radius: 5rpx 5rpx 0rpx 0rpx;
+			padding: 32rpx 0 28rpx 0rpx;
+
+			.tensile {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex: 1;
+				margin-bottom: 20rpx;
+
+				.tensile-text {
+					width: 70rpx;
+					height: 8rpx;
+					background: #C4C4C4;
+					border-radius: 25rpx;
+				}
+
+			}
+
+			.type-contain {
+				display: flex;
+				flex-direction: row;
+				padding: 0 38rpx 0 54rpx;
+				justify-content: space-between;
+
+				.item-type {
+					width: 200rpx;
+					font-family: PingFang SC;
+					font-style: normal;
+					font-weight: 500;
+					font-size: 28rpx;
+					line-height: 40rpx;
+					color: #999999;
+				}
+			}
+		}
+
+		.item-contain {
+			height: 246rpx;
+		}
+
+		.map-tag {
+			background: #FFFFFF;
+			box-shadow: 0rpx 0rpx 8rpx rgba(154, 154, 154, 0.25);
+			border-radius: 10rpx;
+			width: 96rpx;
+			height: 106rpx;
+			position: fixed;
+			bottom: 100rpx;
+			left: 640rpx;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+
+			.img {
+				width: 36rpx;
+				height: 36rpx;
+				margin-bottom: 4rpx;
+			}
+
+			.text {
+				font-weight: bold;
+				font-size: 26rpx;
+				line-height: 36rpx;
+				color: #606166;
+			}
+		}
+	}
+</style>

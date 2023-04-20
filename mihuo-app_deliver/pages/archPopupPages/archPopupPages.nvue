@@ -1,0 +1,34 @@
+<template>
+	<arch-popup class="pagecontent" :list="list" :animation="false"></arch-popup>
+</template>
+<script>
+	import tabBarList from '@/config/tabBarList.js'
+	export default {
+		data() {
+			return {
+				archShow: true,
+				list: tabBarList.tabBarList
+			}
+		},
+		onReady() {
+
+		},
+		methods: {
+			open() {
+
+			}
+		}
+	}
+</script>
+
+<style lang="scss">
+	// page {
+	// 	height: 100%;
+	// 	width: 100%;
+	// 	background: #000;
+	// }
+	.pagecontent{
+		width:100%;
+		height: 100%;
+	}
+</style>

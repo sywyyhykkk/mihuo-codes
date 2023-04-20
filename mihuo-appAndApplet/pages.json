@@ -1,0 +1,2249 @@
+{
+	"easycom": {
+		// npm安装的方式不需要前面的"@/"，下载安装的方式需要"@/"
+		// npm安装方式
+		//"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+		// 下载安装方式
+		"autoscan": true,
+		"custom": {
+			"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue",
+			"^appInfo-(.*)": "@/pages-appInfo/components/appInfo-$1/appInfo-$1.vue",
+			"^common-(.*)": "@/pages-common/components/common-$1/common-$1.vue",
+			"^findMaster-(.*)": "@/pages-findMaster/components/findMaster-$1/findMaster-$1.vue",
+			"^homeCall-(.*)": "@/pages-homeCall/components/homeCall-$1/homeCall-$1.vue",
+			"^mall-(.*)": "@/pages-mall/components/mall-$1/mall-$1.vue",
+			"^message-(.*)": "@/pages-message/components/message-$1/message-$1.vue",
+			"^mine-(.*)": "@/pages-mine/components/mine-$1/mine-$1.vue",
+			"^myHome-(.*)": "@/pages-myHome/components/myHome-$1/myHome-$1.vue",
+			"^order-(.*)": "@/pages-order/components/order-$1/order-$1.vue",
+			"^user-(.*)": "@/pages-user/components/user-$1/user-$1.vue",
+			"^mh-order-(.*)": "@/pages-order/components/mh-order-$1/mh-order-$1.vue",
+			"^valuation-(.*)": "@/pages-valuation/components/valuation-$1/valuation-$1.vue"
+		}
+	},
+	"pages": [{
+			"path": "pages/home/home",
+			"style": {
+				"navigationBarTitleText": "",
+				// #ifndef MP-TOUTIAO
+				"navigationStyle": "custom",
+				// #endif
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none",
+					"softinputMode": ""
+				}
+			}
+		},
+		{
+			"path": "pages/myHome/myHome",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/message/index",
+			"style": {
+				// #ifndef APP || MP-TOUTIAO
+				"navigationBarTitleText": "聊天通知",
+				"navigationStyle": "custom",
+				// #endif
+				"app-plus": {
+					"bounce": "none",
+					"softinputNavBar": "none", //去除键盘横条ios
+					"scrollIndicator": "none" // 不显示滚动条
+				}
+			}
+		},
+		{
+			"path": "uview-ui/components/u-avatar-cropper/u-avatar-cropper",
+			"style": {
+				"navigationBarTitleText": "头像裁剪",
+				"navigationBarBackgroundColor": "#000000"
+			}
+		},
+		{
+			"path": "pages/category/category",
+			"style": {
+				"navigationBarTitleText": "",
+				// #ifndef MP-TOUTIAO
+				"navigationStyle": "custom",
+				// #endif
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/home/article",
+			"style": {
+				"navigationBarTitleText": "",
+				// #ifndef MP-TOUTIAO
+				"navigationStyle": "custom",
+				// #endif
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/mine/personalCenter",
+			"style": {
+				"navigationBarTitleText": "",
+				// #ifndef MP-TOUTIAO
+				"navigationStyle": "custom",
+				// #endif
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/wxPay/wxPay",
+			"style": {
+				"navigationBarTitleText": "觅活收银台",
+				"navigationStyle": "default",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		}
+	],
+	"subPackages": [{
+			"root": "pages-appInfo",
+			"pages": [{
+					"path": "appUpdate/appUpdate",
+					"style": {
+						"background": "rgba(0,0,0,0.3)",
+						"navigationBarTextStyle": "white",
+						"app-plus": {
+							"animationType": "fade-in",
+							"background": "rgba(0,0,0,0.3)",
+							"backgroundColor": "rgba(0,0,0,0.3)",
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "univerifyLogin/univerifyLogin",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none",
+							"animationType": "slide-in-bottom"
+						}
+					}
+				},
+				{
+					"path": "appInfo/appInfo",
+					"style": {
+						"navigationBarTitleText": "",
+						// #ifndef MP-TOUTIAO
+						"navigationStyle": "custom",
+						// #endif
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "privacy/privacy",
+					"style": {
+						"navigationBarTitleText": "隐私政策",
+						"navigationStyle": "default",
+						"navigationBarTextStyle": "black",
+						"enablePullDownRefresh": false,
+						"navigationBarBackgroundColor": "#FFFFFF",
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "serviceAgreement/serviceAgreement",
+					"style": {
+						"navigationBarTitleText": "服务协议",
+						"navigationStyle": "default",
+						"navigationBarTextStyle": "black",
+						"enablePullDownRefresh": false,
+						"navigationBarBackgroundColor": "#FFFFFF",
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}
+			]
+		},
+		{
+			"root": "pages-message",
+			"pages": [{
+					// 服务通知
+					"path": "serviceNotice/serviceNotice",
+					"style": {
+						"enablePullDownRefresh": true,
+						"backgroundColor": "#FFFFFF",
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					// 通讯录
+					"path": "contacts/index",
+					"style": {
+						"enablePullDownRefresh": true,
+						"backgroundColor": "#FFFFFF",
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					// 聊天
+					"path": "chat/index",
+					"style": {
+						"enablePullDownRefresh": false,
+						"navigationBarTitleText": "",
+						"navigationBarTextStyle": "black",
+						"navigationStyle": "default",
+						"app-plus": {
+							"bounce": "none",
+							"softinputNavBar": "none", //去除键盘横条ios
+							"scrollIndicator": "none", // 不显示滚动条
+							"titleNView": {
+								"titleColor": "#000",
+								"titleText": "消息",
+								"buttons": [{
+									// 右侧操作按钮样式定义,是以数组形式定义，可定义多个
+									"type": "menu",
+									"color": "#666",
+									"fontSize": "50rpx",
+									"width": "160rpx"
+								}]
+							}
+						}
+					}
+				},
+				{
+					// 单聊信息
+					"path": "chat/member",
+					"style": {
+						"navigationBarTitleText": "聊天信息",
+						"navigationBarTextStyle": "black",
+						"navigationStyle": "default",
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					// 举报
+					"path": "chat/report",
+					"style": {
+						"navigationBarTitleText": "举报",
+						"navigationBarTextStyle": "black",
+						"navigationStyle": "default",
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					// 群聊
+					"path": "group/index",
+					"style": {
+						"enablePullDownRefresh": false,
+						"navigationBarTitleText": "",
+						"navigationBarTextStyle": "black",
+						"navigationStyle": "default",
+						"app-plus": {
+							"bounce": "none",
+							"softinputNavBar": "none", //去除键盘横条ios
+							"scrollIndicator": "none", // 不显示滚动条
+							"titleNView": {
+								"titleColor": "#000",
+								"titleText": "消息",
+								"buttons": [{
+									//右侧操作按钮样式定义,是以数组形式定义，可定义多个
+									"type": "menu",
+									"color": "#666",
+									"fontSize": "50rpx",
+									"text": "全部已读",
+									"width": "160rpx"
+								}]
+							}
+						}
+					}
+				},
+				{
+					// 创建群聊
+					"path": "group/create",
+					"style": {
+						"app-plus": {
+							"bounce": "none",
+							"softinputNavBar": "none", //去除键盘横条ios
+							"scrollIndicator": "none", // 不显示滚动条
+							"titleNView": {
+								"titleColor": "#000",
+								"titleText": "消息"
+							}
+						}
+					}
+				},
+				{
+					// 群聊
+					"path": "group/detail",
+					"style": {
+						"navigationStyle": "default",
+						"app-plus": {
+							"bounce": "none",
+							"titleNView": {
+								"buttons": [{
+									"text": "\ue645",
+									"fontSrc": "/static/font/iconfont.ttf"
+								}]
+							}
+						}
+					}
+				},
+				{
+					// 设置群聊
+					"path": "group/set",
+					"style": {
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					// 群成员
+					"path": "group/member",
+					"style": {
+						"navigationBarTitleText": "群成员",
+						"enablePullDownRefresh": false,
+						"navigationStyle": "default",
+						"navigationBarBackgroundColor": "#fff",
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}
+			]
+		},
+		{
+			"root": "pages-mall",
+			"pages": [{
+					"path": "shoppingCart/shoppingCart",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"backgroundColorTop": "#F2F2F2",
+						"backgroundColorBottom": "#F2F2F2",
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "test/test",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"backgroundColorTop": "#F2F2F2",
+						"backgroundColorBottom": "#F2F2F2",
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "submitOrder/submitOrder",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"softinputNavBar": "none",
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "productDetail/productDetail",
+					"style": {
+						// #ifdef APP-PLUS
+						// 不加条件编译在h5会报错
+						"app-plus": {
+							"bounce": "none",
+							"titleNView": {
+								"type": "transparent",
+								"titleText": "商品详情",
+								"backgroundImage": "linear-gradient(to right, #FF9A52, #FF6A32)",
+								"buttons": [{
+									//右侧操作按钮样式定义,是以数组形式定义，可定义多个
+									"type": "share",
+									"color": "#fff",
+									"fontSize": "50rpx",
+									"fontSrc": "static/app-plus/share.ttf",
+									"background": "rgba(0,0,0,0.2)"
+								}]
+							}
+						},
+						// #endif
+						"navigationBarTextStyle": "white",
+						"backgroundColor": "#000"
+					}
+				},
+				{
+					"path": "cateList/cateList",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"backgroundColorTop": "#F2F2F2",
+						"backgroundColorBottom": "#F2F2F2",
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "shopInformation/shopInformation",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "submitOrder/uploadOrderFile",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "skuSelect/skuSelect",
+					"style": {
+						// #ifndef MP-TOUTIAO
+						"navigationStyle": "custom",
+						// #endif
+						// #ifdef APP-PLUS || H5
+						"backgroundColor": "transparent",
+						// #endif
+						"app-plus": {
+							"animationType": "fade-in",
+							"background": "transparent",
+							"bounce": "none",
+							"popGesture": "none"
+						},
+						"disableSwipeBack": true
+					}
+				},
+				{
+					"path": "productDetail/productComment",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}, {
+					"path": "productDetail/productPackage",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}, {
+					"path": "packageSelect/packageSelect",
+					"style": {
+						// #ifndef MP-TOUTIAO
+						"navigationStyle": "custom",
+						// #endif
+						// #ifdef APP-PLUS || H5
+						"backgroundColor": "transparent",
+						// #endif
+						"app-plus": {
+							"animationType": "fade-in",
+							"background": "transparent",
+							"bounce": "none",
+							"popGesture": "none"
+						},
+						"disableSwipeBack": true
+					}
+				}, {
+					"path": "couponDetail/couponDetail",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}, {
+					"path": "productDetail/commentDetail",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}, {
+					"path": "seckill/seckill",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}, {
+					"path": "groupDeal/groupDeal",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}
+			]
+		},
+		{
+			"root": "pages-findMaster",
+			"pages": [{
+					"path": "findMasterWorker",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"popGesture": "none",
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "callMaster",
+					"style": {
+						// #ifndef MP-TOUTIAO
+						"navigationStyle": "custom",
+						// #endif
+						"backgroundColor": "#000000",
+						"disableSwipeBack": true,
+						"app-plus": {
+							"animationType": "fade-in",
+							"background": "transparent",
+							"backgroundColor": "rgba(0,0,0,0)", // 背景透明
+							"bounce": "none",
+							"popGesture": "none"
+						}
+					}
+				},
+				{
+					"path": "callOrder",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"backgroundColor": "#FFFFFF",
+						"app-plus": {
+							"bounce": "none",
+							"popGesture": "none"
+						}
+					}
+				},
+				{
+					"path": "issueOrder",
+					"style": {
+						"navigationBarTitleText": "编辑订单",
+						"enablePullDownRefresh": false,
+						"navigationBarTextStyle": "black",
+						"navigationStyle": "default",
+						"navigationBarBackgroundColor": "#FFFFFF",
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "changeItemList",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "serviceEvaluation",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"bounce": "none",
+						"app-plus": {
+							"popGesture": "none",
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "changeItemDetail",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"popGesture": "none",
+							"bounce": "none"
+						}
+					}
+				}
+			]
+		},
+		{
+			"root": "pages-user",
+			"pages": [{
+					"path": "test/test",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"disableSwipeBack": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "miyou/miyou",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"disableSwipeBack": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "miyou/miyouDetail",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"popGesture": "none",
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "miyou/addMiyou",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"popGesture": "none",
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "realName",
+					"style": {
+						"navigationBarTitleText": "实名认证",
+						"enablePullDownRefresh": false,
+						"navigationBarTextStyle": "white",
+						"app-plus": {
+							"bounce": "none" // 将回弹属性关掉
+						}
+					}
+				},
+				{
+					"path": "forget",
+					"style": {
+						"navigationBarTitleText": "忘记密码",
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "forgetPassword",
+					"style": {
+						"navigationBarTitleText": "忘记密码",
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "login",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none",
+							"popGesture": "none"
+						}
+					}
+				},
+				{
+					"path": "register",
+					"style": {
+						"navigationBarTitleText": "注册",
+						"app-plus": {
+							"bounce": "none" // 将回弹属性关掉
+						}
+					}
+				},
+				{
+					"path": "setting/setting",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "setting/personalInfo",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "setting/editPhone",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "setting/pushSetting",
+					"style": {
+						"navigationBarTitleText": "",
+						// #ifndef MP-TOUTIAO
+						"navigationStyle": "custom",
+						// #endif
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "setting/helpCenterMore",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "setting/resetLoginPwd",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "appLogin/appLogin",
+					"style": {
+						"navigationBarTitleText": "",
+						// #ifndef MP-TOUTIAO
+						"navigationStyle": "custom",
+						// #endif
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "changeNickname",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}
+			]
+		},
+		{
+			"root": "pages-common",
+			"pages": [{
+					"path": "inspirationGuide/inspirationGuide",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none",
+							"popGesture": "none"
+						}
+					}
+				},
+				{
+					"path": "inspirationText/inspirationText",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none",
+							"popGesture": "none"
+						}
+					}
+				},
+				{
+					"path": "inspirationOptimize/inspirationOptimize",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none",
+							"popGesture": "none"
+						}
+					}
+				},
+				{
+					"path": "inspirationPreviewImage/inspirationPreviewImage",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none",
+							"popGesture": "none",
+							"animationType": "fade-in",
+							"animationDuration": 100
+						}
+					}
+				},
+				{
+					"path": "inspirationHistory/inspirationHistory",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none",
+							"popGesture": "none"
+						}
+					}
+				},
+				{
+					"path": "mapSearch/mapSearch",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none",
+							"popGesture": "none"
+						}
+					}
+				},
+				{
+					"path": "mapSearchCity/mapSearchCity",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"popGesture": "none",
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "operatorSelectCity/operatorSelectCity",
+					"style": {
+						// #ifndef MP-TOUTIAO
+						"navigationStyle": "custom",
+						// #endif
+						// #ifdef APP-PLUS || H5
+						"backgroundColor": "transparent",
+						// #endif
+						"app-plus": {
+							"animationType": "fade-in",
+							"background": "transparent",
+							"bounce": "none",
+							"popGesture": "none"
+						},
+						"disableSwipeBack": true
+					}
+				},
+				{
+					"path": "full-screen/full-screen",
+					"style": {
+						// #ifndef MP-TOUTIAO
+						"navigationStyle": "custom",
+						// #endif
+						"app-plus": {
+							"animationType": "fade-in", // 设置fade-in淡入动画，为最合理的动画类型
+							"background": "transparent", // 背景透明
+							"backgroundColor": "rgba(0,0,0,0)", // 背景透明
+							"popGesture": "none", // 关闭IOS屏幕左边滑动关闭当前页面的功能
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "full-screen/blankPages",
+					"style": {
+						// #ifndef MP-TOUTIAO
+						"navigationStyle": "custom",
+						// #endif
+						"app-plus": {
+							"animationType": "fade-in", // 设置fade-in淡入动画，为最合理的动画类型
+							"background": "transparent", // 背景透明
+							"backgroundColor": "rgba(0,0,0,0.1)", // 背景透明
+							"popGesture": "none", // 关闭IOS屏幕左边滑动关闭当前页面的功能
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "emptyPage/index",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "notice/notice",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "searchPage/searchPage",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						// #ifndef MP-TOUTIAO
+						"navigationStyle": "custom",
+						// #endif
+						"app-plus": {
+							"softinputNavBar": "none",
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "logOff/logOff",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						// #ifndef MP-TOUTIAO
+						"navigationStyle": "custom",
+						// #endif
+						"app-plus": {
+							"softinputNavBar": "none",
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "logOffInput/logOffInput",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						// #ifndef MP-TOUTIAO
+						"navigationStyle": "custom",
+						// #endif
+						"app-plus": {
+							"softinputNavBar": "none",
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "successPage/successPage",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							//app端特有属性
+							"bounce": "none"
+							// "titleNView": {
+							// 	"buttons": [{ //右侧操作按钮样式定义,是以数组形式定义，可定义多个
+							// 		"color": "#141414",
+							// 		"fontSize": "24rpx",
+							// 		"text": "再次呼叫",
+							// 		"width": "60px"
+							// 	}]
+							// }
+						}
+					}
+				},
+				{
+					"path": "sessionSearchPage/sessionSearchPage",
+					"style": {
+						"app-plus": {
+							"animationType": "fade-in",
+							"app-plus": {
+								"bounce": "none"
+							}
+						}
+					}
+				},
+				{
+					"path": "protocolWebView/protocolWebView",
+					"style": {
+						"navigationBarTitleText": "",
+						"navigationStyle": "default",
+						"navigationBarTextStyle": "black",
+						"enablePullDownRefresh": false,
+						"navigationBarBackgroundColor": "#FFFFFF",
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "case/design/list",
+					"style": {
+						"navigationBarTitleText": "设计案例",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "case/design/details",
+					"style": {
+						"navigationBarTitleText": "案例详情",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "case/construction/details",
+					"style": {
+						"navigationBarTitleText": "施工案例",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"softinputNavBar": "none",
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "case/construction/list",
+					"style": {
+						"navigationBarTitleText": "施工现场",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none",
+							"popGesture": "none",
+							"subNVues": [{
+									"id": "consumerSiteService",
+									"path": "case/subNVue/construction",
+									"style": {
+										"position": "absolute",
+										"bottom": "20upx",
+										"width": "100%",
+										"height": "246upx",
+										"background": "transparent",
+										"mask": "rgba(0,0,0,0)"
+									}
+								},
+								{
+									"id": "tableswitch",
+									"path": "case/subNVue/tableswitch",
+									"style": {
+										"position": "absolute",
+										"width": "96upx",
+										"height": "106upx",
+										"right": "30upx",
+										"bottom": "300upx",
+										"background": "transparent",
+										"mask": "rgba(0,0,0,0)"
+									}
+								},
+								{
+									"id": "verticalList",
+									"path": "case/subNVue/verticalList",
+									"style": {
+										"position": "absolute",
+										"width": "100%",
+										"bottom": "0upx",
+										"background": "transparent",
+										"mask": "rgba(255,255,255,255)"
+									}
+								}
+							]
+						}
+					}
+				},
+				{
+					"path": "addressList/addressList",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "handleAddress/handleAddress",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "homeSearchResult/homeSearchResult",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none",
+							"popGesture": "none"
+						},
+						"disableSwipeBack": true
+					}
+				},
+				{
+					"path": "starCraftsmen/starCraftsmen",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "case/recommend/list",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "case/recommend/detail",
+					"style": {
+						// #ifdef APP-PLUS
+						// 不加条件编译在h5会报错
+						"app-plus": {
+							"bounce": "none",
+							"titleNView": {
+								"type": "transparent",
+								"titleColor": "#000000",
+								"titleText": "案例详情",
+								"backgroundImage": "linear-gradient(to right, #FFFFFF, #FFFFFF)",
+								"buttons": [{
+									// 右侧操作按钮样式定义,是以数组形式定义，可定义多个
+									"type": "share",
+									"color": "#000",
+									"fontSize": "50rpx",
+									"fontSrc": "static/app-plus/share.ttf",
+									"background": "rgba(0,0,0,0.2)"
+								}]
+							}
+						},
+						// #endif
+						"navigationBarTextStyle": "black",
+						"backgroundColor": "#000"
+					}
+				},
+				{
+					"path": "case/recommend/expensesList",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "case/recommend/receivingReport",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "case/recommend/checkRoomReport",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "case/recommend/drawingList",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "case/report/reportList",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "case/report/questionnaireTemplate",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "case/report/checkTemplate",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "case/recommend/deliveryList",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}, {
+					"path": "brandZone/brandZone",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+
+				}
+			]
+		},
+		{
+			"root": "pages-mine",
+			"pages": [{
+					// 发表评价
+					"path": "evaluation",
+					"style": {
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "myEvaluation",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "feedback",
+					"style": {
+						"navigationBarTitleText": "意见反馈",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "myFeedback",
+					"style": {
+						"navigationBarTitleText": "我的反馈",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "helpCenter",
+					"style": {
+						"navigationBarTitleText": "帮助中心",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "cms",
+					"style": {
+						"navigationBarTitleText": "cms",
+						"enablePullDownRefresh": false,
+						"backgroundColorTop": "#F2F2F2",
+						"backgroundColorBottom": "#F2F2F2",
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "history",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"backgroundColorTop": "#F2F2F2",
+						"backgroundColorBottom": "#F2F2F2",
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "myFav",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}, {
+					"path": "recommendMihuo/recommendMihuo",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}, {
+					"path": "recommendMihuo/invitationCode",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}, {
+					"path": "mihuoPrepayment/mihuoPrepayment",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}, {
+					"path": "mihuoCoupon/mihuoCoupon",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}, {
+					"path": "mihuoPrepayment/prepaymentDetail",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}, {
+					"path": "mihuoPrepayment/prepaymentRefund",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}, {
+					"path": "mihuoActivity/mihuoActivity",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}, {
+					"path": "mihuoActivityPoster/mihuoActivityPoster",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}
+			]
+		},
+		{
+			"root": "pages-order",
+			"pages": [{
+					"path": "orderProgress",
+					"style": {
+						"navigationBarTitleText": "查看进度",
+						"enablePullDownRefresh": false,
+						"navigationBarTextStyle": "black",
+						"navigationStyle": "default",
+						"navigationBarBackgroundColor": "#FFFFFF",
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "applyRefund",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					// 订单列表
+					"path": "orderList",
+					"style": {
+						"enablePullDownRefresh": false,
+						"backgroundTextStyle": "light",
+						"navigationBarTitleText": "",
+						"app-plus": {
+							"bounce": "none",
+							"popGesture": "none"
+						}
+					}
+				},
+				{
+					// 订单详情
+					"path": "orderDetails",
+					"style": {
+						"enablePullDownRefresh": false,
+						"navigationBarTitleText": "",
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				//呼叫订单详情
+				{
+					"path": "callOrderDetails",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"disableSwipeBack": true,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				//施工情况
+				{
+					"path": "constructionDetails",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "constructionLog",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "constructionLogDetail/constructionLogDetail",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "punchInRecord",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "acceptance/acceptance-report",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "acceptance/acceptance-report-template",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					// 退款/售后  待评价
+					"path": "refund",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					// 退款详情
+					"path": "refundDetails",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "recordRecord",
+					"style": {
+						"navigationBarTitleText": "报价记录",
+						"enablePullDownRefresh": false,
+						"navigationBarTextStyle": "black",
+						"navigationStyle": "default",
+						"navigationBarBackgroundColor": "#FFFFFF",
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "rejectionRecord",
+					"style": {
+						"navigationBarTitleText": "拒单记录",
+						"enablePullDownRefresh": false,
+						"navigationBarTextStyle": "black",
+						"navigationStyle": "default",
+						"navigationBarBackgroundColor": "#FFFFFF",
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "orderTrends",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "communicationRecord",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}, {
+					"path": "payOrderDetails",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}
+			]
+		},
+		// 我的家
+		{
+			"root": "pages-myHome",
+			"pages": [{
+					"path": "addMyHome",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "commonHandleTodo",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "confirmItems",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "assignedEvents",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "houseServerView",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "serviceCost",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "houseView",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "serviceView",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "assignDetails",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "addCostNote",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "costDetail",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "reviewNode/acceptanceReport",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "disclose",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "reviewNode/discloseReport",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "reviewNode/checkReport",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "decorationMaterials/decorationMaterials",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "decorationMaterials/addSelfPurchase",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "onSiteInspection",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "changeItem",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "bidRecordList",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "houseUploadView",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "measureForm/measureForm",
+					"style": {
+						"navigationBarTitleText": "量房",
+						"navigationStyle": "default",
+						"navigationBarBackgroundColor": "#F4F4F4",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "distributeForm/distributeForm",
+					"style": {
+						"navigationBarTitleText": "派单",
+						"navigationStyle": "default",
+						"navigationBarBackgroundColor": "#F4F4F4",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "otherForm/otherForm",
+					"style": {
+						"navigationBarTitleText": "确认",
+						"navigationStyle": "default",
+						"navigationBarBackgroundColor": "#F4F4F4",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "estimated-cost",
+					"style": {
+						"enablePullDownRefresh": false,
+						// #ifndef MP-TOUTIAO
+						"navigationStyle": "custom",
+						// #endif
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "reviewNode/constructionCheck",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "giveNotice",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+
+				},
+				{
+					"path": "changeRecordPage",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+
+				},
+				{
+					"path": "notToDo",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}, {
+					"path": "backlogBathPay",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+
+				}
+			]
+		},
+		// 首页呼叫的维修安装填写-未填写
+		{
+			"root": "pages-homeCall",
+			"pages": [{
+				"path": "repairNotFilled/repairNotFilled",
+				"style": {
+					"navigationBarTitleText": "",
+					"enablePullDownRefresh": false,
+					"app-plus": {
+						"bounce": "none"
+					}
+				}
+			}, {
+				"path": "typeOfDecoration/typeOfDecoration",
+				"style": {
+					"navigationBarTitleText": "",
+					"enablePullDownRefresh": false,
+					"app-plus": {
+						"bounce": "none"
+					}
+				}
+			}, {
+				"path": "typeOfDecoration/contentPage",
+				"style": {
+					"navigationBarTitleText": "",
+					"enablePullDownRefresh": false,
+					"app-plus": {
+						"bounce": "none"
+					}
+				}
+
+			}, {
+				"path": "callMasterPage/callMasterPage",
+				"style": {
+					"navigationBarTitleText": "",
+					"enablePullDownRefresh": false,
+					"app-plus": {
+						"bounce": "none"
+					}
+				}
+
+			}]
+		},
+		{
+			"root": "pages-processstabdard",
+			"pages": [{
+				"path": "processstabdard",
+				"style": {
+					"navigationBarTitleText": "",
+					// #ifndef MP-TOUTIAO
+					"navigationStyle": "custom",
+					// #endif
+					"app-plus": {
+						"bounce": "none"
+					}
+				}
+			}]
+		},
+		// 快速估计
+		{
+			"root": "pages-valuation",
+			"pages": [{
+					"path": "valuation",
+					"style": {
+						// #ifndef MP-TOUTIAO
+						"navigationStyle": "custom",
+						// #endif
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "valuation-topics",
+					"style": {
+						// #ifndef MP-TOUTIAO
+						"navigationStyle": "custom",
+						// #endif
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "valuation-history",
+					"style": {
+						// #ifndef MP-TOUTIAO
+						"navigationStyle": "custom",
+						// #endif
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				},
+				{
+					"path": "estimated-amounts",
+					"style": {
+						// #ifndef MP-TOUTIAO
+						"navigationStyle": "custom",
+						// #endif
+						"app-plus": {
+							"bounce": "none"
+						}
+					}
+				}
+			]
+		}
+	],
+	"preloadRule": {
+		"pages/home/home": {
+			"network": "all",
+			"packages": ["__APP__"]
+		},
+		"pages/category/category": {
+			"network": "all",
+			"packages": ["pages-mall"]
+		},
+		"pages/message/index": {
+			"network": "all",
+			"packages": ["pages-message"]
+		},
+		"pages/myHome/myHome": {
+			"network": "all",
+			"packages": ["pages-myHome"]
+		},
+		"pages/mine/personalCenter": {
+			"network": "all",
+			"packages": ["pages-user"]
+		}
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		// #ifndef MP-TOUTIAO
+		"navigationStyle": "custom",
+		// #endif
+		// #ifdef MP-TOUTIAO
+		"navigationStyle": "default",
+		// #endif
+		"animationDuration": "300",
+		"scrollIndicator": "none", // 不显示滚动条
+		"app-plus": {
+			"optimization": {
+				"subPackages": true
+			},
+			"runmode": "liberate" // 开启分包优化后，必须配置资源释放模式
+		}
+	},
+	"tabBar": {
+		"color": "#CCCCCC",
+		"selectedColor": "#000000",
+		"borderStyle": "white",
+		"backgroundColor": "#ffffff",
+		"fontSize": "12px",
+		// #ifdef APP-PLUS || H5
+		"iconWidth": "20px",
+		// #endif
+		// #ifdef MP
+		"iconWidth": "10px",
+		// #endif
+		"spacing": "5px",
+		// "midButton": {
+		// 	"height": "80px",
+		// 	"iconWidth": "50px",
+		// 	"text": "我的家",
+		// 	"iconPath": "static/icon/tab_bar/my_home.gif"
+		// },
+		"list": [{
+				"pagePath": "pages/home/home",
+				// #ifdef MP-WEIXIN
+				"iconPath": "static/mp-weixin/home.png",
+				"selectedIconPath": "static/mp-weixin/home-selected.png",
+				//#endif
+				// #ifdef MP-TOUTIAO
+				"iconPath": "static/mp-toutiao/home.png",
+				"selectedIconPath": "static/mp-toutiao/home-selected.png",
+				//#endif
+				// #ifdef APP-PLUS || H5
+				"iconPath": "static/icon/tab_bar/home.png",
+				// #endif
+				// #ifdef APP-PLUS
+				"selectedIconPath": "static/app-plus/home.gif",
+				// #endif
+				// #ifdef H5
+				"selectedIconPath": "static/h5/home.gif",
+				// #endif
+				"text": "首页"
+			},
+			//#ifndef MP-TOUTIAO
+			{
+				"pagePath": "pages/category/category",
+				// #ifdef MP-WEIXIN
+				"iconPath": "static/mp-weixin/category.png",
+				"selectedIconPath": "static/mp-weixin/category-selected.png",
+				//#endif
+				// #ifdef MP-TOUTIAO
+				"iconPath": "static/mp-toutiao/category.png",
+				"selectedIconPath": "static/mp-toutiao/category-selected.png",
+				//#endif
+				// #ifdef APP-PLUS || H5
+				"iconPath": "static/icon/tab_bar/category.png",
+				// #endif
+				// #ifdef APP-PLUS
+				"selectedIconPath": "static/app-plus/category.gif",
+				// #endif
+				// #ifdef H5
+				"selectedIconPath": "static/h5/category.gif",
+				// #endif
+				"text": "分类"
+			},
+			//#endif
+			{
+				"pagePath": "pages/myHome/myHome",
+				// #ifdef MP-WEIXIN
+				"iconPath": "static/mp-weixin/my_home.png",
+				//#endif
+				// #ifdef APP-PLUS || H5
+				"iconPath": "static/icon/tab_bar/my_home.png",
+				// #endif
+				// #ifdef APP-PLUS
+				"selectedIconPath": "static/app-plus/my_home.gif",
+				// #endif
+				// #ifdef H5
+				"selectedIconPath": "static/h5/my_home.gif",
+				// #endif
+				// #ifdef MP-WEIXIN
+				"selectedIconPath": "static/mp-weixin/my_home.png",
+				// #endif
+				// #ifdef MP-TOUTIAO
+				"iconPath": "static/mp-toutiao/category.png",
+				"selectedIconPath": "static/mp-toutiao/category-selected.png",
+				// #endif
+				"text": "我的家"
+			},
+			{
+				"pagePath": "pages/message/index",
+				// #ifdef MP-WEIXIN
+				"iconPath": "static/mp-weixin/message.png",
+				//#endif
+				// #ifdef MP-TOUTIAO
+				"iconPath": "static/mp-toutiao/message.png",
+				//#endif
+				// #ifdef APP-PLUS || H5
+				"iconPath": "static/icon/tab_bar/message.png",
+				// #endif
+				// #ifdef APP-PLUS
+				"selectedIconPath": "static/app-plus/message.gif",
+				// #endif
+				// #ifdef H5
+				"selectedIconPath": "static/h5/message.gif",
+				// #endif
+				// #ifdef MP-WEIXIN
+				"selectedIconPath": "static/mp-weixin/message-selected.png",
+				// #endif
+				// #ifdef MP-TOUTIAO
+				"selectedIconPath": "static/mp-toutiao/message-selected.png",
+				// #endif
+				"text": "消息"
+			},
+			{
+				"pagePath": "pages/mine/personalCenter",
+				// #ifdef MP-WEIXIN
+				"iconPath": "static/mp-weixin/mine.png",
+				//#endif
+				// #ifdef MP-TOUTIAO
+				"iconPath": "static/mp-toutiao/mine.png",
+				//#endif
+				// #ifdef APP-PLUS || H5
+				"iconPath": "static/icon/tab_bar/mine.png",
+				// #endif
+				// #ifdef APP-PLUS
+				"selectedIconPath": "static/app-plus/mine.gif",
+				// #endif
+				// #ifdef H5
+				"selectedIconPath": "static/h5/mine.gif",
+				// #endif
+				// #ifdef MP-WEIXIN
+				"selectedIconPath": "static/mp-weixin/mine-selected.png",
+				// #endif
+				// #ifdef MP-TOUTIAO
+				"selectedIconPath": "static/mp-toutiao/mine-selected.png",
+				// #endif
+				"text": "我的"
+			}
+		]
+	},
+	"condition": {
+		//模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [{
+			"name": "", //模式名称
+			"path": "", //启动页面，必选
+			"query": "" //启动参数，在页面的onLoad函数里面得到
+		}]
+	}
+}

@@ -1,0 +1,89 @@
+
+.my-login {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  justify-content: center;
+
+  .login-title {
+    position: absolute;
+    left: 4rem;
+    top: 3rem;
+
+    .login-logo {
+      width: 9.5rem;
+      height: 4rem;
+    }
+  }
+
+  .login-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+
+.register-form {
+  position: relative;
+  z-index: 1;
+  height: 50vh;
+  padding: 6rem;
+  background: #ffffff;
+  border-radius: 10px;
+  width: 106rem;
+
+  .form-data {
+    position: absolute;
+    bottom: 8rem;
+    top: 6rem;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 0 !important
+    }
+  }
+
+  .form-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .el-button {
+      margin: 0 1rem;
+    }
+  }
+
+}
+
+.forgetPassword-text {
+  text-align: center;
+  cursor: pointer;
+  color: @tableTitleFontColor;
+  font-weight: bold;
+
+  > span {
+    margin-left: 10px;
+    color: #fff;
+  }
+}
+
+.form-item-up {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: left;
+
+  :deep(.el-form-item__label) {
+    text-align: left;
+  }
+}

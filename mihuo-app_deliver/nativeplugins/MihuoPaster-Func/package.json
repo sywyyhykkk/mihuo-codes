@@ -1,0 +1,25 @@
+{
+    "name": "剪贴板内容格式判断ios",
+    "id": "MihuoPaster-Func",
+    "version": "1.0.0",
+    "description": "api 格式",
+    "_dp_type": "nativeplugin",
+    "_dp_nativeplugin": {
+        "ios": {
+            "plugins": [
+                {
+                    "type": "module",
+                    "name": "MihuoPaster-Func",
+                    "class": "MihuoPaster"
+                }
+            ],
+			"deploymentTarget": "11.0",	
+			"validArchitectures": [    
+					"arm64"
+			],
+            "integrateType": "framework",
+            "privacies": [],
+            "resources": []
+        }
+    }
+}

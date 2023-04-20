@@ -1,0 +1,15 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+			{
+				"appID": "X32593XG8Q.uni.UNI183C0D4",
+				"paths": ["/deliver/*"]
+			},
+            {
+                "appID": "X32593XG8Q.uni.UNIC86B2B9",
+                "paths": ["/customer/*"]
+            }
+        ]
+    }
+}

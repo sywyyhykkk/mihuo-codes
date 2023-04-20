@@ -1,0 +1,91 @@
+<template>
+	<div class="construction">
+		<view class="cross" v-if="listShow">
+			<scroll-view class="list-contain" :scroll-with-animation="true" :scroll-x="true" :show-scrollbar="false" :scroll-into-view="scrollIntoView">
+				<view v-for="(item, index) in list" :key="index" :id="`content-${item.id}`">
+					<common-mh-construction-case :formData="item" @toPageConstruction="toPageConstruction"></common-mh-construction-case>
+				</view>
+			</scroll-view>
+		</view>
+	</div>
+</template>
+
+<script>
+	
+	export default {
+		data() {
+			return {
+				listShow: true,
+				list: [],
+				scrollIntoView: ''
+			}
+		},
+		onShow() {
+			// 接收全局传参-通信
+			uni.$on('tableswitch', (data) => {
+				this.listShow = data.showStatus
+			})
+			uni.$on('scrollToView', (data) => {
+				this.scrollIntoView = `content-${data}`
+			})
+			uni.$on('updateData', (data) => {
+				this.getData()
+			})
+			if (uni.getStorageSync("latitude") && uni.getStorageSync("longitude")) {
+				this.latitude = uni.getStorageSync("latitude")
+				this.longitude = uni.getStorageSync("longitude")
+			}
+			this.getData()
+		},
+		onHide() {
+			uni.$off('scrollToView')
+			uni.$off('updateData')
+			uni.$off('tableswitch')
+		},
+		methods: {
+			getData() {
+				this.list = uni.getStorageSync('Construction_List')
+			},
+			getShow() {
+				this.listShow = true // 隐藏列表
+				const subNVue = uni.getSubNVueById('consumerSiteService')
+				subNVue.setStyle({
+					bottom: '10',
+					height: '141',
+				})
+			},
+			toPageConstruction(id) {
+				uni.navigateTo({
+				    url: `/pages-common/case/construction/details?id=${id}`
+				});
+			},
+		}
+	}
+</script>
+
+<style lang="scss" scoped>
+	/* #ifndef APP-PLUS-NVUE */
+	::-webkit-scrollbar {
+		display: none;
+		width: 0 !important;
+		height: 0 !important;
+		-webkit-appearance: none;
+		background: transparent;
+		color: transparent;
+	}
+
+	/* #endif */
+
+	.construction {
+
+		.cross {
+			overflow: hidden;
+
+			.list-contain {
+				display: flex;
+				flex-direction: row;
+				padding-left: 40rpx;
+			}
+		}
+	}
+</style>

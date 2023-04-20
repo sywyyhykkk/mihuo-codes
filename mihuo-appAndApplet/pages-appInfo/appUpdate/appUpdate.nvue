@@ -1,0 +1,325 @@
+<template>
+	<view class="update-content">
+		<view class="content-text">
+			<uni-icons type="closeempty" class="close_icon" @click="()=>close()"></uni-icons>
+			<image src="@/pages-appInfo/static/images/appUpdate.png" class="image-bg"></image>
+			<view class="version-title">
+				<text class="version">
+					{{ version }}
+				</text>
+			</view>
+			<view class="list">
+				<text class="item-list" v-for="item, index in list.split(';')" :key="index">{{ item }}</text>
+			</view>
+			<button @click="appUpadate" class="up_button"><text
+					class="button_text">{{updateIng?"更新中...":'立即更新'}}</text></button>
+		</view>
+	</view>
+</template>
+<script>
+	import common from '@/config/common.js'
+
+	export default {
+		components: {
+
+		},
+		data() {
+			return {
+				list: '',
+				down_url: '',
+				type: '',
+				fileType: '',
+				version: '',
+				updateContent: '',
+				updateIng: false,
+			}
+		},
+		onLoad(options) {
+			const versionInfo = uni.getStorageSync("versionInfo")
+			this.version = versionInfo.version;
+			this.updateContent = versionInfo.updateContent;
+			this.getVersion()
+		},
+		methods: {
+			close() {
+				uni.navigateBack();
+			},
+			appUpadate() {
+				if (!this.down_url || this.updateIng) return
+				this.updateIng = true;
+				this.downLoadFileAndInstall(this.down_url, this.type, this.fileType);
+			},
+			getVersion() {
+				plus.runtime.getProperty(plus.runtime.appid, wgtinfo => {
+					let app_name = wgtinfo.name;
+					let version = wgtinfo.version;
+					let system = uni.getSystemInfoSync().platform;
+					//这里可以用code 但是安卓可能不支持
+					let version_num = version.split('.').join('');
+					let apptype = 0;
+					switch (app_name) {
+						case '觅活服务端':
+							apptype = system === 'ios' ? 3 : 2
+							break;
+						case '觅活':
+							apptype = system === 'ios' ? 1 : 0
+							break;
+						default:
+							apptype = 10
+					}
+					this.getAppVersion(version_num, apptype);
+				});
+			},
+			getAppVersion(version, apptype) {
+				// 处理切换版本
+				const currentMode = uni.getStorageSync('devModeApi')
+				let apiEnv = common
+				if (currentMode) {
+					apiEnv = currentMode
+				}
+				// 这个接口是不需要登录也可以访问的
+				uni.request({
+					url: apiEnv.apiUrl + `admin/appversion/getNewVersion?type=${apptype}`,
+					success: (res) => {
+						if (res.data.code == 0 && res.data.data) {
+							let data = res.data.data;
+							let type = data.updateType; //type判断为整包更新还是热更新(整包为.apk,热更新为.wgt)
+							let down_url = apiEnv.imageGlobal + data.fileUrl; //更新包下载地址
+							let fileType = data.fileUrl ? data.fileUrl.split('.')[1] : '';
+							this.list = data.updateContent
+							this.down_url = down_url
+							this.type = type
+							this.fileType = fileType
+							// this.downLoadFileAndInstall(down_url, type, fileType);
+						} else {
+							uni.showToast({
+								title: '获取更新失败',
+								icon: "none"
+							})
+						}
+					}
+				})
+			},
+			// 下载更新包
+			downLoadFileAndInstall(down_url, type, fileType) {
+				//console.log(down_url, type, fileType)
+				if (type == 1) {
+					//热更新
+					plus.io.resolveLocalFileSystemURL(`_doc/update/appNewVersion.${fileType}`, (entry) => {
+						entry.remove()
+						plus.nativeUI.toast('正在为您更新App,请稍后....');
+						plus.downloader.createDownload(down_url, {
+							filename: `_doc/update/appNewVersion.${fileType}`
+						}, (d, status) => {
+							if (status == 200) {
+								this.installWgt(d.filename); // 安装wgt包
+							} else {
+								plus.nativeUI.toast('更新失败，请稍后重试');
+							}
+						}).start();
+					}, () => {
+						//这里只是以防万一，安卓出现错误。
+						plus.nativeUI.toast('正在为您更新App,请稍后....');
+						plus.downloader.createDownload(down_url, {
+							filename: `_doc/update/appNewVersion.${fileType}`
+						}, (d, status) => {
+							if (status == 200) {
+								this.installWgt(d.filename); // 安装wgt包
+							} else {
+								plus.nativeUI.toast('更新失败，请稍后重试');
+							}
+						}).start();
+					})
+				} else if (type == 2) {
+					// 整包
+					this.updateIng = false;
+					let osname = plus.os.name;
+					const googlePlay = "com.android.vending";
+					if (osname == 'Android') {
+						let androidBuildName = common.androidBuildName;
+						let deviceInfo = uni.getDeviceInfo();
+						switch (deviceInfo.deviceBrand) {
+							case 'xiaomi':
+								let miappurl =
+									"mimarket://details?id=uni.UNI183C0D4" //这个是通用应用市场，如果想指定某个应用商店，需要单独查这个应用商店的包名或scheme及参数
+								plus.runtime.openURL(miappurl)
+								break;
+							case 'huawei':
+								let happurl =
+									"appmarket://details?id=uni.UNI183C0D4" //这个是通用应用市场，如果想指定某个应用商店，需要单独查这个应用商店的包名或scheme及参数
+								plus.runtime.openURL(happurl)
+								break;
+							case 'oppo':
+								let oappurl =
+									"oppomarket://details?packagename=uni.UNI183C0D4" //这个是通用应用市场，如果想指定某个应用商店，需要单独查这个应用商店的包名或scheme及参数
+								plus.runtime.openURL(oappurl)
+								break;
+							case 'vivo':
+								let vappurl =
+									"vivomarket://details?id=uni.UNI183C0D4" //这个是通用应用市场，如果想指定某个应用商店，需要单独查这个应用商店的包名或scheme及参数
+								plus.runtime.openURL(vappurl)
+								break;
+							default:
+								var Uri = plus.android.importClass("android.net.Uri");
+								var Intent = plus.android.importClass('android.content.Intent');
+								var main = plus.android.runtimeMainActivity();
+								var uri = Uri.parse("market://details?id=" + common.androidBuildName);
+								var intent = new Intent(Intent.ACTION_VIEW, uri);
+								// 选择进入商店  
+								intent.setPackage(googlePlay);
+								intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
+								// 没有该商店应用  
+								if (intent.resolveActivity(main.getPackageManager()) !== null) {
+									main.startActivity(intent);
+								} else {
+									// 跳转浏览器  
+									let uri = Uri.parse("https://play.google.com/store/apps/details?id=" + common
+										.androidBuildName);
+									let intent = new Intent(Intent.ACTION_VIEW, uri);
+									intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK;
+									intent.setPackage('com.android.browser');
+									main.startActivity(intent);
+								}
+						}
+					} else {
+						// ios打开应用商店
+						let appleId = common.iosAppid;
+						plus.runtime.launchApplication({
+							action: `itms-apps://itunes.apple.com/cn/app/id${appleId}?mt=8`
+						}, (e) => {});
+					}
+				}
+			},
+			//更新资源包
+			installWgt(path) {
+				plus.runtime.install(path, {
+						force: true
+					}, () => {
+						uni.hideToast();
+						this.updateIng = false;
+						let system = uni.getSystemInfoSync(); // 获取系统信息
+						if (system.platform === 'android') {
+							plus.nativeUI.toast('App更新完成, 即将重新启动');
+							setTimeout(() => {
+								plus.runtime.restart();
+							}, 1000)
+						} else {
+							plus.nativeUI.toast('App更新完成, 即将重新启动');
+							setTimeout(() => {
+								plus.runtime.restart();
+							}, 1000)
+						}
+					},
+					(e) => {
+						plus.nativeUI.toast('App更新失败[' + e.code + ']：' + e.message);
+					}
+				);
+			}
+		}
+	}
+</script>
+<style lang="scss">
+	.update-content {
+		width: 600rpx;
+		margin: 400rpx 75rpx;
+
+		.content-text {
+			width: 600rpx;
+			background-color: #fff;
+			border-radius: 48rpx;
+			box-shadow: 0rpx 40rpx 80rpx 0rpx rgba(0, 0, 0, 0.5);
+
+			.target {
+				transform: translateX(100px);
+				transition: transform 1s;
+			}
+
+			.origin {
+				// 这里可以简写哈
+				transform: translateX(0px);
+				transition-property: transform;
+				transition-duration: 1s;
+			}
+
+			.image-bg {
+				margin-top: 60rpx;
+				position: absolute;
+				width: 600rpx;
+				height: 600rpx;
+			}
+
+			.version-title {
+				width: 600rpx;
+				margin-top: -60rpx;
+				display: flex;
+				align-items: flex-start;
+				flex-direction: row;
+				padding-left: 78rpx;
+
+				.version {
+					font-size: 72rpx;
+					font-weight: bold;
+					font-family: Noto Sans S Chinese;
+					font-weight: 400;
+					color: #000000;
+					line-height: 140rpx;
+				}
+
+				.info {
+					padding-top: 10rpx;
+					font-size: 24rpx;
+					margin-left: 20rpx;
+					font-family: Noto Sans S Chinese;
+					font-weight: bold;
+					color: #000000;
+					line-height: 140rpx;
+				}
+			}
+
+
+			.list {
+				width: 600rpx;
+				padding: 0 20rpx 0rpx 20rpx;
+				margin-top: -40rpx;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+
+				.item-list {
+					width: 500rpx;
+					height: 80rpx;
+					padding: 0 40rpx;
+					font-size: 26rpx;
+					font-weight: 400;
+					color: #333333;
+					line-height: 80rpx;
+				}
+			}
+
+			.up_button {
+				background-color: #FF5D35;
+				border-radius: 35rpx;
+				border: 2rpx solid #FF5D35;
+				line-height: 72rpx;
+				margin: 44rpx 40rpx;
+				margin-top: 50rpx;
+
+				.button_text {
+					color: #ffffff;
+					height: 70rpx;
+					line-height: 70rpx;
+					font-size: 32rpx;
+					font-weight: bold;
+				}
+			}
+
+			.close_icon {
+				width: 60rpx;
+				height: 60rpx;
+				text-align: center;
+				margin: 20rpx 0rpx;
+				margin-left: 520rpx;
+			}
+		}
+	}
+</style>

@@ -1,0 +1,96 @@
+<template>
+	<view class="decoration-button" :style="{background:bgColor}">
+		<view class="service_button" @click="clickButton()">
+			<!-- #ifdef APP-PLUS -->
+			<image class="icon" mode="aspectToFit" src="@/pages-homeCall/static/icon/customer.png"/>
+			<!-- #endif -->
+			<!-- #ifndef APP-PLUS -->
+			<mihuo-image class="icon" src="https://www.51mihuo.com/static/icon/home_v3/customer.png"/>
+			<!-- #endif -->
+			<text>客服</text>
+		</view>
+		<view class="call_button">
+			<view @click="()=>$emit('click')" :style="{background:btnBg}">{{ title }}</view>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		props:{
+			bgColor:{
+				type:String,
+				default:()=> "#FFFFFF"
+			},
+			btnBg:{
+				type:String,
+				default:()=> "#000000"
+			},
+			title:{
+				type:String,
+				default:()=> ""
+			}
+		},
+		data() {
+			return {
+				
+			}
+		},
+		methods: {
+			clickButton(){
+				if (!uni.getStorageSync('userData')) {
+					this.$util.goToLoginPage()
+					return
+				}
+				this.$util.goToWeixin();
+			}
+		},
+	}
+</script>
+
+<style lang="scss" scoped>
+.decoration-button{
+	width: 100%;
+	position: fixed;
+	display: flex;
+	padding: 15rpx 30rpx 0;
+	z-index: 99;
+	@include buttonsafearea();
+	.service_button{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding-top: 5rpx;
+		.icon{
+			width: 32rpx;
+			height: 32rpx;
+		}
+		text{
+			color: #141414;
+			font-size: 18rpx;
+			font-weight: bold;
+			font-family: PingFang-SC-Bold;
+			padding-top: 15rpx;
+		}
+	}
+	.call_button{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex: 1;
+		margin-bottom: 10rpx;
+		view{
+			line-height: 84rpx;
+			border-radius: 15rpx;
+			font-size: 28rpx;
+			font-family: NotoSansHans-Medium;
+			font-weight: bold;
+			color: #FFFFFF;
+			background: #000000;
+			text-align: center;
+			flex: 1;
+			margin-left: 20rpx;
+		}
+	}
+}
+</style>

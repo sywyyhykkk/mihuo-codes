@@ -1,0 +1,1190 @@
+// 新版element-plus样式问题，先手动修复，后面更新版本在看看会不会出问题
+
+//tag标签
+.el-tag--warning {
+  background: #F2AA3D !important;
+  color: #ffffff !important;
+}
+
+//button
+.el-button {
+  height: 3.6rem;
+
+  &:focus {
+    opacity: 1 !important;
+  }
+}
+
+.main-button {
+  color: @mainColor !important;
+  cursor: pointer;
+}
+
+.el-button-underline {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.el-button--primary {
+  background-color: @mainColor;
+  border-color: @mainColor;
+
+  &:hover {
+    background-color: @mainColor !important;
+    border-color: @mainColor !important;
+    opacity: 0.8 !important;
+    color: #ffffff !important;
+    //transform: scale(1.1);
+  }
+
+  &:focus {
+    background-color: @mainColor !important;
+    border-color: @mainColor !important;
+    opacity: 1 !important;
+  }
+}
+
+.el-button--danger {
+  &:focus {
+    background-color: @errorColor !important;
+    border-color: @errorColor !important;
+    opacity: 1 !important;
+  }
+}
+
+.is-plain {
+  color: @mainColor !important;
+  background: @AuxiliaryBackgroundColor !important;
+  border-color: @mainColor !important;
+
+  &:hover {
+    background-color: @mainColor !important;
+    color: #ffffff !important;
+    opacity: 1;
+    //transform: scale(1.1);
+  }
+
+  &:focus {
+    color: @mainColor !important;
+    background: @AuxiliaryBackgroundColor !important;
+    border-color: @mainColor !important;
+  }
+}
+
+.el-button--text.danger {
+  color: @errorColor;
+
+  &:hover {
+    color: rgb(247, 137, 137) !important;
+  }
+}
+
+.el-button--text.info {
+  color: #C0C4CC !important;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.el-button--text.confirm {
+  color: #67C23A;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.el-button--text.danger.is-disabled {
+  color: #c0c4cc !important;
+}
+
+.el-button--text {
+  color: @firstAuxiliaryColor;
+
+  &:hover {
+    opacity: 0.7 !important;
+  }
+
+}
+
+.el-button--info {
+  background: #C0C4CC !important;
+  border: 1px solid #C0C4CC;
+
+  &:hover {
+    opacity: 0.7 !important;
+  }
+}
+
+
+.el-button.is-circle {
+  height: 3.6rem !important;
+  width: 3.6rem;
+  border-radius: 3.6rem;
+}
+
+//el-step
+.el-step__head.is-process {
+  color: @mainColor;
+  border-color: @mainColor;
+}
+
+.el-step__title.is-process {
+  color: @mainColor;
+}
+
+.el-step__line {
+  background-color: #f3f4f8;
+}
+
+.el-step.is-horizontal .el-step__line {
+  height: 0.3rem;
+}
+
+//el-tabs
+.el-tabs__header {
+  margin: 3rem 0 0 0;
+}
+
+.el-tabs__nav-wrap::after {
+  height: 0.1rem;
+  background-color: #EDEDEE;
+}
+
+.el-tabs__item {
+  line-height: 2rem;
+  color: #909399;
+}
+
+//el-tree
+.el-tree-node__content {
+  margin-bottom: 0.8rem;
+}
+
+.el-tree-node__content:hover {
+  background-color: #F3F4F8;
+  //color: #0969DA;
+}
+
+.el-tree {
+  --el-tree-node-hover-bg-color: @AuxiliaryBackgroundColor;
+  margin-right: 2rem;
+
+  .el-tree-node__expand-icon {
+    padding-left: 0;
+  }
+}
+
+//card
+.is-always-shadow {
+  box-shadow: none !important;
+}
+
+.el-card-form {
+  display: flex;
+  position: relative;
+
+  .el-card-formRight {
+    width: calc(100% - 32.6rem);
+    //position: relative;
+  }
+
+  .el-card-formLeft {
+    width: 30.6rem;
+    border-right: solid 1px @tableBackColor;
+    padding-top: 2rem;
+    height: calc(100vh - 13.5rem);
+    margin-right: 2rem;
+    overflow-y: auto;
+
+    .el-button--text {
+      color: @mainColor !important;
+
+    }
+
+    .card-button-top {
+      position: absolute;
+      background: #ffffff;
+      width: 100%;
+      height: 5rem;
+      margin-top: -2rem;
+      padding-top: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .custom-tree-node {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .tree-node-icon {
+      -moz-transform: rotate(-90deg);
+      -webkit-transform: rotate(-90deg);
+      filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+      margin-right: 0.8rem;
+    }
+
+    .el-card-custom {
+      font-size: 14px;
+      font-family: Microsoft YaHei;
+      font-weight: 500;
+      color: #4C4C4C;
+      display: flex;
+      align-items: center;
+    }
+
+    .formLeft-class {
+      line-height: 4.6rem;
+      background: @menuActiveText;
+      border-radius: 4px;
+      padding-left: 2rem;
+      margin-bottom: 1.5rem;
+      font-size: 14px;
+      font-family: Microsoft YaHei;
+      font-weight: 500;
+      color: #ffffff;
+      margin-right: 2rem;
+    }
+
+    .formLeft-ul {
+      line-height: 4.6rem;
+      background: #F0F0F0;
+      border-radius: 4px;
+      padding-left: 2rem;
+      margin-bottom: 1.5rem;
+      font-size: 14px;
+      font-family: Microsoft YaHei;
+      font-weight: 500;
+      color: #333333;
+      margin-right: 2rem;
+    }
+
+    .formLeft-ul:hover {
+      background: #EBF4FF;
+      color: @subMenuActiveText;
+    }
+  }
+}
+
+.el-card--body2 {
+  margin-top: -2rem;
+}
+
+.el-card {
+  border: none !important;
+
+
+  .card-left-form {
+    display: flex;
+    align-items: center;
+    max-width: 70vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+  }
+
+  .el-card__body {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0rem 2rem 0rem;
+
+    .el-input-group__prepend {
+      width: 9.5rem !important;
+      box-shadow: none;
+      padding-right: 0;
+
+      .el-select {
+        margin-right: 0 !important;
+      }
+    }
+
+    .el-button-group {
+      margin-right: 2rem;
+
+      .el-button {
+        margin-right: 0 !important;
+        border-radius: 3.2rem;
+        height: 3.2rem;
+        line-height: 3.2rem !important;
+
+        &:first-child {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+
+        &:last-child {
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+
+    }
+
+    .el-input {
+      width: 20rem !important;
+
+      .el-input__inner {
+        // height: 3.6rem !important;
+        line-height: 3.6rem !important;
+      }
+
+      margin-right: 2rem !important;
+    }
+
+    .el-select {
+      width: 15rem !important;
+      margin-right: 2rem !important;
+      line-height: 3.6rem;
+
+      .el-input {
+        width: 100% !important;
+
+        .el-input__inner {
+          // height: 3.6rem !important;
+          line-height: 3.6rem !important;
+        }
+
+        ::-webkit-input-placeholder {
+          color: #606266;
+        }
+      }
+    }
+
+
+    .el-cascader {
+      width: 15rem !important;
+      margin-right: 2rem;
+
+      .el-input {
+        width: 100% !important;
+
+        .el-input__inner {
+          height: 3.6rem !important;
+          line-height: 3.6rem !important;
+        }
+
+        ::-webkit-input-placeholder {
+          color: #606266;
+        }
+      }
+    }
+
+    .el-range-editor {
+      width: 30rem;
+      height: 3.6rem;
+      margin-right: 2rem;
+    }
+
+    .el-button {
+      margin-left: 0rem !important;
+      margin-right: 2rem;
+      line-height: 3.6rem;
+    }
+
+    .el-button--default {
+      &:hover {
+        color: @mainColor;
+        background: @AuxiliaryBackgroundColor;
+        border: solid 0.1rem @mainColor;
+      }
+    }
+
+    .el-card-right {
+      flex: 1;
+      text-align: right;
+
+      .el-input {
+        width: 20rem !important;
+
+        .el-input__inner {
+          height: 3.6rem !important;
+          line-height: 3.6rem !important;
+        }
+
+        margin-left: 2rem !important;
+      }
+
+      .el-select {
+        width: 15rem !important;
+        margin-left: 2rem !important;
+        line-height: 3.6rem !important;
+
+        .el-input {
+          width: 100% !important;
+
+          .el-input__inner {
+            // height: 3.6rem !important;
+            // line-height: 3.6rem !important;
+            margin: 5rem 0;
+          }
+
+          ::-webkit-input-placeholder {
+            color: #606266;
+          }
+        }
+      }
+
+      .el-cascader {
+        width: 15rem !important;
+        margin-left: 2rem;
+        line-height: 3.6rem !important;
+
+        .el-input {
+          width: 100% !important;
+
+          .el-input__inner {
+            height: 3.6rem !important;
+            line-height: 3.6rem !important;
+          }
+
+          ::-webkit-input-placeholder {
+            color: #606266;
+          }
+        }
+      }
+
+      .el-button {
+        margin-left: 2rem !important;
+        margin-right: 0rem;
+        height: 3.6rem;
+        line-height: 3.6rem !important;
+      }
+    }
+  }
+}
+
+//
+
+.el-radio-button {
+  height: 36px !important;
+  line-height: 36px !important;
+
+  .el-radio-button__inner {
+    height: 36px !important;
+    display: flex;
+    align-items: center;
+  }
+
+  --el-color-primary: @mainColor;
+}
+
+//下拉菜单
+
+
+//form表单
+.el-form-item {
+  margin-top: 2.2rem;
+}
+
+.el-form-item .is-error .el-input__inner {
+  //box-shadow: 0 0 0 1px @errorColor inset !important;
+  border: 0.1rem solid @errorColor !important;
+}
+
+.el-form-item--default {
+  margin-bottom: 2.2rem;
+}
+
+.el-form-item__label {
+  line-height: 4rem !important;
+  font-size: 1.4rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: #606266;
+}
+
+//多选框
+.el-checkbox-group {
+  display: flex;
+  width: 38rem;
+  justify-items: center;
+}
+
+.el-switch {
+  width: 4rem;
+}
+
+.el-input-search {
+  width: 15rem !important;
+  margin-right: 2rem;
+}
+
+.el-range-editor.el-input__inner {
+  width: 35rem;
+  height: 4rem;
+}
+
+.el-input {
+  width: 38rem;
+
+  .el-input__inner {
+    border: 0.1rem solid #e4e7ed;
+    height: 4rem;
+    line-height: 4rem;
+    font-size: 1.4rem;
+    font-family: Microsoft YaHei;
+    font-weight: 500;
+    color: #1A1A1A;
+    box-shadow: 0px 0px !important;
+
+    &:focus {
+      border: 0.1rem solid @mainColor !important;
+    }
+  }
+}
+.el-card .el-card__body .el-card-right .el-select .el-input .el-input__inner {
+  margin: 1rem 0 !important;
+}
+.el-textarea {
+  width: 38rem;
+
+  .el-textarea__inner {
+    &:focus {
+      box-shadow: 0px 0px !important;
+      border: 0.1rem solid @mainColor !important;
+    }
+  }
+}
+
+
+.el-input-group__append {
+  background: #F7F7F7;
+  width: 4rem;
+  padding: 0;
+  text-align: center;
+}
+
+.el-select {
+  width: 38rem;
+  // height: 4rem;
+
+  .el-input {
+    width: 100%;
+
+    .el-input__inner {
+      box-shadow: 0 0 0 0 !important;
+      // height: 4rem !important;
+      line-height: 4rem;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #1A1A1A;
+    }
+  }
+}
+
+.el-select .el-input.is-focus .el-input__inner {
+  border-color: @mainColor;
+  box-shadow: 0 0 0 0 !important;
+}
+
+.el-cascader {
+  width: 38rem;
+
+  .el-input {
+    width: 100%;
+
+    .el-input__inner {
+      height: 4rem !important;
+      line-height: 4rem !important;
+      font-size: 1.4rem;
+      font-family: Microsoft YaHei;
+      font-weight: 500;
+      color: #1A1A1A;
+    }
+  }
+}
+
+
+//.el-radio {
+//  .el-radio__input {
+//    //margin-top: 0.3rem;
+//  }
+//}
+
+.el-radio__input.is-checked + .el-radio__label {
+  color: @mainColor;
+}
+
+.el-radio__input.is-checked .el-radio__inner {
+  border-color: @mainColor;
+  background: @mainColor;
+}
+
+.el-upload--picture-card {
+  width: 11rem !important;
+  height: 11rem !important;
+  margin-bottom: 1.5rem;
+
+  &:focus {
+    border: 0.1rem dashed @mainColor;
+  }
+
+  &:hover {
+    border: 0.1rem dashed @mainColor;
+  }
+
+  .el-icon {
+    width: 4rem;
+    height: 4rem;
+    //2.0.4版本
+    margin-top: 3.5rem;
+  }
+}
+
+.el-upload-list {
+  .el-upload-list__item {
+    width: 11rem !important;
+    height: 11rem !important;
+    margin: 0 1.5rem 0.5rem 0 !important;
+
+  }
+}
+
+//上传的组件进度条
+.el-progress-circle {
+  width: 8rem !important;
+  height: 8rem !important;
+  margin: 0 auto;
+  margin-bottom: 0.6rem;
+  opacity: 0.3;
+}
+
+.el-progress__text {
+  display: none !important;
+}
+
+
+//弹出
+.el-overlay-dialog {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.el-dialog__headerbtn {
+  &:hover {
+    color: @mainColor !important;
+  }
+}
+
+.el-dialog__close {
+  width: 3rem;
+  height: 3rem;
+  font-size: 2.3rem !important;
+
+  &:hover {
+    color: @mainColor !important;
+  }
+
+  .icon {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  .icon:hover {
+    color: @mainColor;
+  }
+}
+
+.el-dialog__footer {
+  padding: 0;
+  min-height: 0.1rem;
+
+  .dialog-footer {
+    text-align: right;
+    height: 8rem;
+    display: flex;
+    align-items: center;
+    padding: 0 4rem 0 2rem;
+    justify-content: right;
+    border-top: solid 1px @pageDividerColor;
+
+    .el-button {
+
+      margin-left: 1.5rem !important;
+    }
+  }
+}
+
+.el-dialog__header {
+  background: @tableBackColor;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+  line-height: 7rem;
+  padding: 0 2rem 0 2rem;
+  margin: 0 !important;
+}
+
+.el-dialog__title {
+  font-size: 1.8rem;
+  font-family: Microsoft YaHei;
+  font-weight: 400;
+  color: @mainBlackColor;
+}
+
+.el-dialog__body {
+  padding: 0rem 0 0 2rem;
+  max-height: 75vh;
+  overflow-y: auto;
+  min-height: 17rem;
+}
+
+.el-dialog {
+  position: relative;
+  z-index: 2000;
+  --el-dialog-margin-top: 4rem;
+  --el-dialog-width: 53rem;
+  min-width: 53rem;
+  border-radius: 10px !important;
+  box-shadow: 0px 0px 15px 10px rgb(#000, 0.1) !important;
+  //-webkit-animation: el-dialog 0.3s linear both !important;
+  //animation: el-dialog 0.3s linear both !important;
+  width: var(--el-dialog-width, 55rem);
+  margin: var(--el-dialog-margin-top, 4rem) auto 5rem;
+  //max-width: 110rem;
+}
+
+//@-webkit-keyframes el-dialog {
+//  0% {
+//    -webkit-transform: scale(1) translateY(-2000px);
+//    transform: scale(1) translateY(-2000px);
+//  }
+//
+//  50% {
+//    -webkit-transform: scale(1) translateY(-1000px);
+//    transform: scale(1) translateY(-1000px);
+//  }
+//
+//  100% {
+//    -webkit-transform: scale(1) translateY(0px);
+//    transform: scale(1) translateY(0px);
+//  }
+//}
+//
+//@keyframes el-dialog {
+//  0% {
+//    -webkit-transform: scale(1) translateY(-2000px);
+//    transform: scale(1) translateY(-2000px);
+//  }
+//
+//  50% {
+//    -webkit-transform: scale(1) translateY(-1000px);
+//    transform: scale(1) translateY(-1000px);
+//  }
+//
+//  100% {
+//    -webkit-transform: scale(1) translateY(0px);
+//    transform: scale(1) translateY(0px);
+//  }
+//}
+.el-message{
+  z-index: 3000 !important;
+}
+//分页
+.el-pagination {
+  position: fixed;
+  bottom: 0.85rem;
+  right: 2rem;
+  margin-top: 1rem;
+  height: 4rem;
+}
+
+//table
+
+//.el-table__body-wrapper{
+//  .el-table__body{
+//    tr.hover-row > td{
+//      background-color: #1A283C !important;
+//    }
+//  }
+//}
+.el-table {
+  width: 100%;
+  height: calc(100vh - 24rem) !important;
+  //max-height: calc(100vh - 24rem) !important;
+}
+
+.el-table tr {
+  height: 4.9rem !important;
+}
+
+.el-table-fixed-column--right {
+  width: 5rem !important;
+  min-width: 3rem !important;
+  padding: 0 !important;
+}
+
+.el-table__header {
+  //background-color: @tableTitle;
+  --el-table-header-bg-color: @tableTitle;
+}
+
+.el-table th {
+  background-color: @tableTitle !important;
+}
+
+.el-table .has-gutter th {
+  background-color: @tableTitle;
+  color: @tableTitleFontColor;
+  font-size: 12px;
+  line-height: 35px;
+}
+
+.el-table .el-table__row .cell {
+  color: @tableFontColor;
+  font-size: 12px;
+}
+
+.el-table--border, .el-table--group {
+  //border: 0px solid @tableBorderColor;
+  border: none !important;
+}
+
+.el-table__empty-text {
+  line-height: 60px;
+  width: 50%;
+  color: @tableFontColor;
+}
+
+.el-table__expand-icon {
+  position: relative;
+  cursor: pointer;
+  color: @tableFontColor;
+  font-size: 12px;
+  -webkit-transition: -webkit-transform .2s ease-in-out;
+  transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+  height: 20px
+}
+
+.el-table__expanded-cell:hover {
+  background-color: transparent !important
+}
+
+.el-table th {
+  background-color: @tableTitle;
+  color: @tableTitleFontColor;
+  font-size: 12px;
+  line-height: 35px;
+}
+
+.el-table th > .cell.highlight {
+  color: @firstAuxiliaryColor
+}
+
+.el-table th.required > div::before {
+  display: inline-block;
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: @errorColor;
+  margin-right: 5px;
+  vertical-align: middle
+}
+
+.el-table--border, .el-table--group {
+  border: 1px solid @AuxiliaryBackgroundColor
+}
+
+.el-table--border::after, .el-table--group::after, .el-table::before {
+  content: "";
+  position: absolute;
+  background-color: @AuxiliaryBackgroundColor;
+  z-index: 1
+}
+
+
+.el-table--border th.gutter:last-of-type {
+  border-bottom: 1px solid @AuxiliaryBackgroundColor;
+  border-bottom-width: 1px
+}
+
+.el-table--border th, .el-table__fixed-right-patch {
+  border-bottom: 1px solid @AuxiliaryBackgroundColor
+}
+
+.el-table__fixed-footer-wrapper tbody td {
+  border-top: 1px solid @AuxiliaryBackgroundColor;
+  background-color: @AuxiliaryBackgroundColor;
+  color: @tableFontColor;
+}
+
+
+.el-table__footer-wrapper td {
+  border-top: 1px solid @tableBorderColor
+}
+
+.el-table__footer-wrapper tbody td, .el-table__header-wrapper tbody td {
+  background-color: @AuxiliaryBackgroundColor;
+  color: @tableFontColor;
+}
+
+.el-table__body-wrapper .el-table--border.is-scrolling-right ~ .el-table__fixed-right {
+  border-left: 1px solid @tableBorderColor;
+}
+
+.el-table .ascending .sort-caret.ascending {
+  border-bottom-color: @mainColor;
+}
+
+.el-table .descending .sort-caret.descending {
+  border-top-color: @mainColor;
+}
+
+.el-table__column-resize-proxy {
+  position: absolute;
+  left: 200px;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  border-left: 1px solid @tableBorderColor;
+  z-index: 10
+}
+
+.el-table__column-filter-trigger i {
+  color: @tableFontColor;
+  font-size: 12px;
+  vertical-align: middle;
+  -webkit-transform: scale(.75);
+  transform: scale(.75)
+}
+
+.el-table--enable-row-hover .el-table__body tr:hover > td {
+  background-color: #F5F7FA
+}
+
+
+.warning-row {
+  --el-table-tr-bg-color: #F5F7FA;
+}
+
+.warning-row2 {
+  --el-table-tr-bg-color: #FAECD8;
+}
+
+.warning-row3 {
+  --el-table-tr-bg-color: #F5F7FA;
+}
+
+.warning-row4 {
+  --el-table-tr-bg-color: #ECF5FF;
+}
+
+//
+.el-overlay {
+  background-color: rgb(#FFFFFF, 0.1) !important;
+  //z-index: 2000;
+}
+
+.el-drawer {
+  min-width: 57.6rem !important;
+  background: #ffffff;
+
+  .el-drawer__header {
+    font-size: 18px;
+    font-family: Microsoft YaHei;
+    font-weight: 500;
+    color: #1A1A1A;
+    height: 7.7rem !important;
+    margin: 0 !important;
+    padding: 0 2rem !important;
+    background: #F3F4F8;
+
+    .el-drawer__close {
+      width: 2rem;
+      height: 2rem;
+      color: #999999;
+    }
+  }
+
+  .el-drawer__body {
+    padding: 0 !important;
+
+    .my-drawer__body {
+      background: #F3F4F8;
+      height: calc(100vh - 7.7rem);
+      overflow-y: auto;
+    }
+  }
+}
+
+//布局容器
+.el-header {
+  padding: 0;
+  height: auto !important;
+}
+
+.el-main {
+  padding: 0;
+}
+
+.el-footer {
+  padding: 0;
+  height: auto !important;
+}
+
+//tabs
+.el-tabs__item {
+  &:hover {
+    color: @mainColor !important;
+  }
+}
+
+.el-tabs__item.is-active {
+  color: @mainColor;
+}
+
+.el-tabs__active-bar {
+  background-color: @mainColor;
+}
+
+//tree 树形
+.el-tree {
+  .custom {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    span {
+      flex: 1;
+    }
+
+    .svg-icon {
+      color: @mainColor;
+      margin: 0;
+      display: none;
+    }
+  }
+
+  .el-tree-node__content {
+    &:hover {
+      .custom {
+        .svg-icon {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .el-tree-node:focus > .el-tree-node__content {
+    color: @mainColor;
+    background-color: @AuxiliaryBackgroundColor;
+
+    .custom {
+      .svg-icon {
+        display: block;
+      }
+    }
+  }
+}
+
+.el-loading-spinner {
+  margin-top: calc((var(--el-loading-spinner-size)) * -1 / 2);
+
+  .circular {
+    // display: none;
+  }
+}
+
+.left-data {
+  overflow-y: auto;
+  height: calc(100% - 8rem);
+  padding-bottom: 10px;
+  margin-right: 2rem;
+
+  .name {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .template-item {
+    padding: 17px 20px 17px 20px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    color: #333333;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    min-width: 153px;
+    display: flex;
+    justify-content: space-between;
+
+    .el-icon-remove-outline {
+      font-size: 14px;
+      margin-right: 5px;
+      transform: rotate(45deg);
+      color: #f56c6c;
+    }
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+
+    &:hover {
+      background-color: #ebf4ff;
+      color: @mainColor;
+
+      .operation {
+        display: flex;
+
+        i {
+          display: block !important;
+        }
+      }
+    }
+
+    .operation {
+      i {
+        font-size: 12px;
+        margin-right: 9px;
+        cursor: pointer;
+        display: none;
+
+        &:last-child {
+          margin-right: 0px;
+        }
+      }
+
+      .el-icon-delete {
+        color: #f56c6c;
+      }
+    }
+  }
+
+  .template-item-active {
+    background-color: @mainColor;
+    color: #ffffff;
+
+    &:hover {
+      background-color: @mainColor;
+      color: #ffffff;
+    }
+  }
+}
+
+//轮播图
+.el-carousel {
+  height: 14rem;
+  overflow: hidden;
+
+  .el-carousel__container {
+    height: 14rem !important;
+
+    .el-carousel__arrow {
+      height: 14rem;
+    }
+  }
+}
+
+.el-carousel__item {
+  opacity: 0.5;
+}
+
+.is-active {
+  opacity: 1 !important;
+}

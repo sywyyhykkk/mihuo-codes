@@ -1,0 +1,2926 @@
+{
+	"easycom": {
+		// npm安装的方式不需要前面的"@/"，下载安装的方式需要"@/"
+		// npm安装方式
+		//"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+		// 下载安装方式
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [{
+			"path": "pages/home/home",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/home/processstabdard",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarTextStyle": "black",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/workersDetails",
+			"style": {
+				"navigationBarTitleText": "查看工人详情",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF ",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/acceptance/acceptanceTab",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "black",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/constructionCompletion",
+			"style": {
+				"navigationBarTitleText": "开工",
+				"navigationStyle": "default",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "black",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/acceptance/acceptanceDetails",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "black",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/acceptance/supplementaryInstruction",
+			"style": {
+				"navigationBarTitleText": "补充说明",
+				"navigationStyle": "default",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "black",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/acceptance/completionSituation",
+			"style": {
+				"navigationBarTitleText": "完工情况",
+				"navigationStyle": "default",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "black",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/measurement",
+			"style": {
+				"navigationBarTitleText": "测量",
+				"navigationStyle": "default",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "black",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/user/login",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{ // 通讯录
+			"path": "pages/contacts/index",
+			"navigationBarTitleText": "通讯录",
+			"style": {
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/user/register",
+			"style": {
+				"navigationBarTitleText": "注册",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/user/bindCard",
+			"style": {
+				"navigationBarTitleText": "绑定银行卡",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/user/bindCardStep",
+			"style": {
+				"navigationBarTitleText": "",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/user/realName",
+			"style": {
+				"navigationBarTitleText": "实名认证",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path": "pages/user/realNameStep",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path": "pages/user/login",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"popGesture": "none",
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path": "pages/user/userTeam",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"popGesture": "none",
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path": "pages/user/addTeamMember",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"popGesture": "none",
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path": "pages/template/addTemplate",
+			"style": {
+				"navigationBarTitleText": "新增功能"
+			}
+		},
+		{
+			"path": "pages/user/bindCard",
+			"style": {
+				"navigationBarTitleText": "绑定银行卡",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/user/forget",
+			"style": {
+				"navigationBarTitleText": "忘记密码",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/user/forgetPassword",
+			"style": {
+				"navigationBarTitleText": "忘记密码",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/user/faceIdentification",
+			"style": {
+				"navigationBarTitleText": "人脸识别",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/user/protocol",
+			"style": {
+				"navigationBarTitleText": "协议",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/message/index",
+			"style": {
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"softinputNavBar": "none", //去除键盘横条ios
+					"scrollIndicator": "none" // 不显示滚动条
+				}
+			}
+		},
+		{ // 通讯录
+			"path": "pages/contacts/index",
+			"style": {
+				"enablePullDownRefresh": true,
+				"backgroundColor": "#f5f5f5",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{ // 聊天
+			"path": "pages/message/chat/index",
+			"style": {
+				"enablePullDownRefresh": false,
+				"navigationBarTitleText": "",
+				"navigationBarTextStyle": "black",
+				"navigationStyle": "default",
+				"app-plus": {
+					"bounce": "none",
+					"softinputNavBar": "none", //去除键盘横条ios
+					"scrollIndicator": "none", // 不显示滚动条
+					"softinputmode": "adjustResize",
+					"titleNView": {
+						"titleColor": "#000",
+						"titleText": "消息",
+						"buttons": [{ //右侧操作按钮样式定义,是以数组形式定义，可定义多个
+							"type": "menu",
+							"color": "#666",
+							"fontSize": "50rpx",
+							"width": "160rpx"
+						}]
+					}
+				}
+			}
+		},
+		{ // 单聊信息
+			"path": "pages/message/chat/member",
+			"style": {
+				"navigationBarTitleText": "聊天信息",
+				"navigationBarTextStyle": "black",
+				"navigationStyle": "default",
+				"app-plus": {
+
+				}
+			}
+		},
+		{ // 举报
+			"path": "pages/message/chat/report",
+			"style": {
+				"navigationBarTitleText": "举报",
+				"navigationBarTextStyle": "black",
+				"navigationStyle": "default",
+				"bounce": "none",
+				"app-plus": {
+
+				}
+			}
+		},
+		{ // 群聊
+			"path": "pages/message/group/index",
+			"style": {
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none",
+					"softinputNavBar": "none", //去除键盘横条ios
+					"scrollIndicator": "none", // 不显示滚动条
+					"titleNView": {
+						"titleColor": "#000",
+						"titleText": "消息",
+						"buttons": [{ //右侧操作按钮样式定义,是以数组形式定义，可定义多个
+							"type": "menu",
+							"color": "#666",
+							"fontSize": "50rpx",
+							"width": "160rpx"
+						}]
+					}
+				}
+			}
+		},
+		{ // 创建群聊
+			"path": "pages/message/group/create",
+			"style": {
+				"app-plus": {
+					"bounce": "none",
+					"softinputNavBar": "none", //去除键盘横条ios
+					"scrollIndicator": "none", // 不显示滚动条
+					"titleNView": {
+						"titleColor": "#000",
+						"titleText": "消息"
+					}
+				}
+			}
+		},
+		{ // 群聊
+			"path": "pages/message/group/detail",
+			"style": {
+				"navigationStyle": "default",
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue645",
+							"fontSrc": "/static/font/iconfont.ttf"
+						}]
+					}
+				}
+			}
+		},
+		{ // 设置群聊
+			"path": "pages/message/group/set",
+			"style": {
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{ // 群成员
+			"path": "pages/message/group/member",
+			"style": {
+				"navigationBarTitleText": "群成员",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "default",
+				"navigationBarBackgroundColor": "#fff",
+				"bounce": "none",
+				"app-plus": {
+
+				}
+			}
+		},
+		{
+			"path": "pages/publishTask/orderRelease",
+			"style": {
+				"navigationBarTitleText": "派单",
+				"enablePullDownRefresh": false,
+				"navigationStyle": "default",
+				"navigationBarBackgroundColor": "#fff",
+				"bounce": "none",
+				"app-plus": {
+					"softinputNavBar": "none",
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/construction/middleOrder",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/middleConstruction",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/middleExternalAccept",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/publishTask/orderDetailNew",
+			"style": {
+				"navigationBarTitleText": "指派工匠",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "white",
+				"navigationStyle": "default",
+				"navigationBarBackgroundColor": "#002FA5",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/publishTask/selectPick",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarTextStyle": "white",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/certification/skills",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarTextStyle": "white",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/certification/information",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarTextStyle": "white",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/certification/commitment",
+			"style": {
+				"navigationBarTitleText": "服务承诺",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "white",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#002FA5",
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": {
+						"backgroundImage": "linear-gradient(to right, #002FA5,#002FA5)"
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/certification/results",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/publishTask/sendOrder",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/publishTask/sendOrderSuccess",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{ // 订单列表入口
+			"path": "pages/order/order",
+			"style": {
+				"navigationBarTitleText": "交易订单",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "white",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#1A81F0",
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": {
+						"backgroundImage": "linear-gradient(to right, #1A81F0,#1A81FF)"
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/order/newOrder",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{ // 订单列表
+			"path": "pages/order/orderList",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarTextStyle": "white",
+				"enablePullDownRefresh": true,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/orderReceiving",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "black",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/offerSuccess",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/expectOffer",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		//		 搜索页
+		// {
+		// 	"path": "pages/search/search",
+		// 	"style": {
+		// 		"navigationBarTitleText": "",
+		// 		"enablePullDownRefresh": false
+		// 	}
+		// },
+		{
+			"path": "pages/message/orderChat/orderChat",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": {
+						"titleColor": "#000",
+						"titleText": "觅活",
+						"titleSize": "16px",
+						"backButton": {
+							"color": "#333",
+							"fontWeight": "600",
+							"colorPressed": "#660000",
+							"fontSize": "20px"
+						}
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/mapChoose/mapChoose",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/personalCenter",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/setting/setting",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/setting/personalInfo",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/setting/homeInfo",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/setting/skillInfo",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/setting/editPayPassword",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/setting/resetPayPassword",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/setting/resetLoginPwd",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/setting/eidtPhone",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/setting/eidtName",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/user/bindPhoneStep",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "uview-ui/components/u-avatar-cropper/u-avatar-cropper",
+			"style": {
+				"navigationBarTitleText": "头像裁剪",
+				"navigationBarBackgroundColor": "#000000"
+			}
+		},
+		{
+			"path": "pages/setting/addBankCard",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/setting/unBindBank",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/setting/inputPayPwd",
+			"style": {
+				"navigationBarTitleText": "输入支付密码",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/setting/pushSet",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/setting/helpCenter",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/feedback",
+			"style": {
+				"navigationBarTitleText": "意见反馈",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/myFeedback",
+			"style": {
+				"navigationBarTitleText": "我的反馈",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/setting/selectBank",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/balanceAccount",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/recharge",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/rechargeRecord",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/rechargeSucceeded",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/incomeExpense",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/balanceWithdrawal",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/findPerson",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/bankCard",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/cms",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/addCard",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/settingPayPassword",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/moneyingRecord",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/withdrawalRecord",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/penaltyRecord",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/calendar/calendar",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"backgroundColorTop": "#F5F5F5",
+				"backgroundColorBottom": "#F5F5F5",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/messageModel/messageModel",
+			"style": {
+				"background": "rgba(0,0,0,0.3)",
+				"navigationBarTextStyle": "white",
+				"bounce": "none",
+				"app-plus": {
+					"animationType": "fade-in",
+					"background": "rgba(0,0,0,0.3)",
+					"backgroundColor": "rgba(0,0,0,0.3)"
+				}
+			}
+		},
+		{
+			"path": "pages/searchPage/searchPage",
+			"style": {
+				"navigationBarTitleText": "搜索",
+				"enablePullDownRefresh": false,
+				"bounce": "none",
+				"app-plus": {
+					"titleNView": {
+						"titleText": "搜索"
+					},
+					"animationType": "fade-in"
+				}
+			}
+		},
+		{
+			"path": "pages/publishTask/fileUpload",
+			"style": {
+				"navigationBarTitleText": "选择文件",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/archPopupPages/archPopupPages",
+			"style": {
+				"navigationStyle": "custom",
+				"backgroundColor": "transparent",
+				"bounce": "none",
+				"app-plus": {
+					"animationType": "slide-in-bottom",
+					"background": "rgba(0,0,0,0.3)",
+					"backgroundColor": "transparent",
+					"popGesture": "none",
+					"animationDuration": "0"
+				}
+			}
+		},
+		{
+			"path": "pages/construction/assignmentDetail/assignmentDetail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		// 考勤打卡
+		{
+			"path": "pages/construction/kqAnddk/attendance",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		// 查看打卡记录
+		{
+			"path": "pages/construction/kqAnddk/dkRecord",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/assignmentDetail/common/serviceTeam",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/feedback/abnormalFeedback",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/feedback/feedbackRecord",
+			"style": {
+				"navigationBarTitleText": "异常反馈记录",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/constructionPlan",
+			"style": {
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/constructionLog",
+			"style": {
+				"navigationBarTitleText": "服务日志",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/addConstructionLog",
+			"style": {
+				"navigationBarTitleText": "服务日志",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/patrolInspection/patrolIndex",
+			"style": {
+				"navigationBarTitleText": "巡检",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/patrolInspection/patrolInspection",
+			"style": {
+				"navigationBarTitleText": "新增巡检",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "black",
+				"navigationStyle": "default",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"app-plus": {}
+			}
+		},
+		{
+			"path": "pages/construction/patrolInspection/patrolDetails",
+			"style": {
+				"navigationBarTitleText": "巡检详情",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/punish/punishIndex",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": true,
+				"bounce": "none",
+				"pullToRefresh": {
+					"support": true,
+					"color": "#1A81FF",
+					"style": "circle",
+					"offset": "200px"
+				}
+			}
+		},
+		{
+			"path": "pages/construction/punish/addPunish",
+			"style": {
+				"navigationBarTitleText": "处罚",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/punish/punishDetails",
+			"style": {
+				"navigationBarTitleText": "处罚详情",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/punish/punishDetailed",
+			"style": {
+				"navigationBarTitleText": "处罚明细",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "white",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#002FA5",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/punish/existingProblems",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/punish/customProblems",
+			"style": {
+				"navigationBarTitleText": "自定义问题",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/changeRecord/changeIndex",
+			"style": {
+				"navigationBarTitleText": "变更记录",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/changeRecord/changeDetails",
+			"style": {
+				"navigationBarTitleText": "变更详情",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/changeRecord/launchChange",
+			"style": {
+				"navigationBarTitleText": "发起变更",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/apply/delayIndex",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/apply/urgeIndex",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/apply/applyRecord",
+			"style": {
+				"navigationBarTitleText": "申请记录",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/fileDeliver/fileDeliver",
+			"style": {
+				"navigationBarTitleText": "文件交付",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "components/construction-step/construction-step",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		// {
+		// 	"path": "components/order-new-item/order-new-item",
+		// 	"style": {
+		// 		"navigationBarTitleText": "",
+		// 		"enablePullDownRefresh": false
+		// 	}
+		// },
+		{
+			"path": "pages/construction/acceptance/acceptanceList",
+			"style": {
+				"navigationBarTitleText": "验收",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/drawings/drawings",
+			"style": {
+				"navigationBarTitleText": "施工文件",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/processList/processList",
+			"style": {
+				"navigationBarTitleText": "工序清单",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/processList/processDetails",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/processList/operationRecords",
+			"style": {
+				"navigationBarTitleText": "工序清单操作记录",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/acceptance/acceptanceManagement",
+			"style": {
+				"navigationBarTitleText": "确认验收",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none",
+				"app-plus": {
+
+				}
+			}
+		},
+		{
+			"path": "pages/construction/disclosure/addDisclosure",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path": "pages/construction/disclosure/disclosureDetails",
+			"style": {
+				"navigationBarTitleText": "查看交底",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/disclosure/disclosurePage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/disclosure/initiatePage",
+			"style": {
+				"navigationBarTitleText": "发起交底通知",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/disclosure/viewDisclosureNotice",
+			"style": {
+				"navigationBarTitleText": "查看交底通知",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/disclosure/viewDisclosureText",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/disclosure/supplement",
+			"style": {
+				"navigationBarTitleText": "添加补充",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/disclosure/disclosureRecord",
+			"style": {
+				"navigationBarTitleText": "执行记录",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/evaluation/evaluationForm",
+			"style": {
+				"navigationBarTitleText": "发表评价",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/evaluation/evaluationDetails",
+			"style": {
+				"navigationBarTitleText": "查看评价",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/evaluation/evaluationPage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/evaluation/evaluationRecords",
+			"style": {
+				"navigationBarTitleText": "评价记录",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/rectification/rectificationList",
+			"style": {
+				"navigationBarTitleText": "整改",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/rectification/rectificationDetails",
+			"style": {
+				"navigationBarTitleText": "整改详情",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/rectification/rectificationForm",
+			"style": {
+				"navigationBarTitleText": "提交整改",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/complaint/complaintForm",
+			"style": {
+				"navigationBarTitleText": "发起申述",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/complaint/complaintForm",
+			"style": {
+				"navigationBarTitleText": "发起申述",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/complaint/complaintDetails",
+			"style": {
+				"navigationBarTitleText": "申述详情",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/complaint/complaintList",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/shutdownReturnWork/shutDownForm",
+			"style": {
+				"navigationBarTitleText": "复工",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/shutdownReturnWork/shutDownDetails",
+			"style": {
+				"navigationBarTitleText": "停工/复工记录",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "components/work-people/work-people",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/showModelPrivary/showModelPrivary",
+			"style": {
+				"navigationStyle": "custom",
+				"backgroundColor": "transparent",
+				"app-plus": {
+					"animationType": "fade-in",
+					"background": "transparent",
+					"backgroundColor": "transparent",
+					"popGesture": "none"
+				}
+			}
+		}
+		// ,{
+		//     "path" : "components/send-info/send-info",
+		//     "style" :
+		//     {
+		//         "navigationBarTitleText": "",
+		//         "enablePullDownRefresh": false
+		//     }
+		// }
+		,
+		{
+			"path": "pages/construction/drawings/uploadDrawings",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/construction/drawings/viewDrawings",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+
+				}
+			}
+		},
+		{
+			"path": "pages/construction/drawings/editDrawings",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/operatorSelectCity/operatorSelectCity",
+			"style": {
+				"navigationStyle": "custom",
+				"backgroundColor": "transparent",
+				"app-plus": {
+					"animationType": "fade-in",
+					"background": "transparent",
+					"bounce": "none",
+					"popGesture": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/construction/drawings/upload",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/full-screen/full-screen",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/full-screen/videoPlayPage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/full-screen/blankPages",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/full-screen/preview",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/sessionSearchPage/sessionSearchPage",
+			"style": {
+				"app-plus": {
+					"animationType": "fade-in"
+				}
+			}
+		},
+		{
+			"path": "pages/fileUpload/fileUpload",
+			"style": {
+				"navigationBarTitleText": "上传文件",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/measuringRoom/measuringRoomPage",
+			"style": {
+				"navigationBarTitleText": "量房",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/measuringRoom/measuringRoomPageDetails",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/measuringRoom/measuringRoomForm",
+			"style": {
+				// "navigationBarTitleText": "录入量房信息",
+				// "enablePullDownRefresh": false,
+				// "navigationBarTextStyle": "white",
+				// "navigationStyle": "default",
+				// "navigationBarBackgroundColor": "#002FA5",
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+
+		{
+			"path": "pages/construction/measuringRoom/roomQuestionnaire",
+			"style": {
+				"navigationBarTitleText": "房屋问卷信息",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "white",
+				"navigationStyle": "default",
+				"navigationBarBackgroundColor": "#002FA5",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/appUpdate/appUpdate",
+			"style": {
+				"background": "rgba(0,0,0,0.3)",
+				"navigationBarTextStyle": "white",
+				"bounce": "none",
+				"app-plus": {
+					"animationType": "fade-in",
+					"background": "rgba(0,0,0,0.3)",
+					"backgroundColor": "rgba(0,0,0,0.3)"
+				}
+			}
+		},
+		{
+			"path": "pages/appInfo/appInfo",
+			"style": {
+				"navigationBarTitleText": "",
+				"bounce": "none",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/logOff/logOff",
+			"style": {
+				"navigationBarTitleText": "账号注销",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none",
+				"app-plus": {
+					"background": "#000000",
+					"backgroundColor": "#00000"
+				}
+			}
+		},
+		{
+			"path": "pages/logOffInput/logOffInput",
+			"style": {
+				"navigationBarTitleText": "注销",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none",
+				"app-plus": {}
+			}
+		},
+		{
+			"path": "pages/privacy/privacy",
+			"style": {
+				"navigationBarTitleText": "隐私政策",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF"
+			}
+		},
+		{
+			"path": "pages/serviceAgreement/serviceAgreement",
+			"style": {
+				"navigationBarTitleText": "用户协议",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/electronicProtocol/electronicProtocol",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/home/moreWork",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+
+		}, {
+			"path": "pages/home/morePeople",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		}, {
+			"path": "pages/notice/notice",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"app-plus": { //app端特有属性
+					"titleNView": {
+						"buttons": [{ //右侧操作按钮样式定义,是以数组形式定义，可定义多个
+							"color": "#666",
+							"fontSize": "24rpx",
+							"text": "全部已读",
+							"width": "160rpx"
+						}]
+					}
+				}
+			}
+		}, {
+			"path": "pages/noticeDetaile/noticeDetaile",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+
+		}, {
+			"path": "pages/setting/helpCenterMore",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+
+		},
+		{
+			"path": "pages/setting/belonging/belonging",
+			"style": {
+				"navigationBarTitleText": "所属企业",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/protocolWebView/protocolWebView",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/collection/collectionPage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/collection/collectionDetails",
+			"style": {
+				"navigationBarTitleText": "收款详情",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/collection/collectionForm",
+			"style": {
+				"navigationBarTitleText": "录入收款信息",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/collection/collectionRecord",
+			"style": {
+				"navigationBarTitleText": "凭证记录",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		}, {
+			"path": "pages/emptyPage/emptyPage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/univerifyLogin/univerifyLogin",
+			"style": {
+				"background": "rgba(0,0,0,0)",
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"bounce": "none",
+					"animationType": "slide-in-bottom",
+					"popGesture": "none" // 关闭IOS屏幕左边滑动关闭当前页面的功能
+				}
+			}
+		},
+		{
+			"path": "pages/publishTask/portfolioPrice",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/publishTask/addWorkItem",
+			"style": {
+				"navigationBarTitleText": "添加工作项",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/publishTask/IssueOrder",
+			"style": {
+				"navigationBarTitleText": "发布订单",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/publishTask/assignCraftsman",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"popGesture": "none",
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path": "pages/publishTask/constructionStie",
+			"style": {
+				"navigationBarTitleText": "施工地点",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/releaseOrderDetails",
+			"style": {
+				// "navigationBarTitleText": "订单详情",
+				// "navigationStyle": "default",
+				// "navigationBarTextStyle": "black",
+				// "enablePullDownRefresh": false,
+				// "navigationBarBackgroundColor": "#f5f5f5",
+				// "bounce": "none",
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/listingOrderDetails",
+			"style": {
+				// "navigationBarTitleText": "订单详情",
+				// "navigationStyle": "default",
+				// "navigationBarTextStyle": "black",
+				// "enablePullDownRefresh": false,
+				// "navigationBarBackgroundColor": "#f5f5f5",
+				// "bounce": "none",
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/addAcceptance",
+			"style": {
+				"navigationBarTitleText": "提交验收",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/changePrice",
+			"style": {
+				"navigationBarTitleText": "变更价格",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/construction/drawings/constructionDocuments",
+			"style": {
+				"navigationBarTitleText": "施工文件",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/drawings/toViewImage",
+			"style": {
+				"navigationBarTitleText": "查看图纸",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/drawings/toViewFile",
+			"style": {
+				"navigationBarTitleText": "查看文件",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/changeRecords",
+			"style": {
+				"navigationBarTitleText": "变更记录",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#f5f5f5",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/setting/skillCertification/skillCertificationPage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/setting/skillCertification/skillCertificationDetails",
+			"style": {
+				"navigationBarTitleText": "技能认证结果",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/acceptance/addAcceptance",
+			"style": {
+				"navigationBarTitleText": "提交验收",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/acceptance/acceptanceManagement",
+			"style": {
+				"navigationBarTitleText": "确认验收",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/acceptance/completionSituation",
+			"style": {
+				"navigationBarTitleText": "完工情况",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/acceptance/supplementaryInstruction",
+			"style": {
+				"navigationBarTitleText": "补充说明",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/acceptance/acceptanceDetails",
+			"style": {
+				"navigationBarTitleText": "验收详情",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/acceptance/acceptanceRecord",
+			"style": {
+				"navigationBarTitleText": "验收记录",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		// C端订单施工打卡
+		{
+			"path": "pages/orderReceiving/constructionDk",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		// C端订单施工打卡记录
+		{
+			"path": "pages/orderReceiving/constructionDkRecord",
+			"style": {
+				"navigationBarTitleText": "打卡记录",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/constructionForm",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/constructionRecord",
+			"style": {
+				"navigationBarTitleText": "服务记录",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/acceptance/constructionLog",
+			"style": {
+				"navigationBarTitleText": "服务日志",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/acceptance/addConstructionLog",
+			"style": {
+				"navigationBarTitleText": "填写服务日志",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/acceptance/viewAcceptanceCriteria",
+			"style": {
+				"navigationBarTitleText": "验收标准",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/orderPriceList",
+			"style": {
+				"navigationBarTitleText": "价格清单",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#f5f5f5",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/riskStatementPage",
+			"style": {
+				"navigationBarTitleText": "风险提示",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/addRiskStatement",
+			"style": {
+				"navigationBarTitleText": "新增风险提示",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/demandMarket/releaseDemand",
+			"style": {
+				"navigationBarTitleText": "发布需求",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/demandMarket/demandDetails",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/demandMarket/contactRecord",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/demandMarket/mineReleaseDemand",
+			"style": {
+				"navigationBarTitleText": "我的发布",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/customNodes/customNodesPage",
+			"style": {
+				"navigationBarTitleText": "自定义",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/customNodes/customNodesAdd",
+			"style": {
+				"navigationBarTitleText": "自定义",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/examine",
+			"style": {
+				"navigationBarTitleText": "审查",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/quotedPrice/quotedPricePage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/assignForm",
+			"style": {
+				"navigationBarTitleText": "处理待办",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/examineDetails",
+			"style": {
+				"navigationBarTitleText": "审核详情",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/budget/budgetPage",
+			"style": {
+				"navigationBarTitleText": "预算详情",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/clientBilling/clientBilling",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path": "pages/construction/clientBilling/materialWarehouse",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path": "pages/construction/clientBilling/billingRecordList",
+			"style": {
+				"navigationBarTitleText": "开单记录",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/clientBilling/recordHistoryDetails",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path": "pages/construction/clientBilling/billingDetails",
+			"style": {
+				"navigationBarTitleText": "确认开单",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/clientBilling/paymentQrCode",
+			"style": {
+				"navigationBarTitleText": "待支付",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "white",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#646C93",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/permanentResidence/permanentResidence",
+			"style": {
+				"navigationBarTitleText": "常驻地",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/permanentResidence/addPermanent",
+			"style": {
+				"navigationBarTitleText": "新增常驻地",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mapSearch/mapSearch",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/Insurance/InsurancePage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path": "pages/mine/Insurance/insuranceRecord",
+			"style": {
+				"navigationBarTitleText": "投保记录",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "black",
+				"navigationStyle": "default",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/mine/deposit/depositPage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path": "pages/mine/deposit/recharge",
+			"style": {
+				"navigationBarTitleText": "质保金管理",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/toDoList/toDoListPage",
+			"style": {
+				"navigationBarTitleText": "待办中心",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/toDoList/calendarDetails",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path": "pages/toDoList/calendarPage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path": "pages/mine/Insurance/recordDetails",
+			"style": {
+				"navigationBarTitleText": "保单详情",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "black",
+				"navigationStyle": "default",
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
+		},
+		{
+			"path": "pages/mine/shop/agreement",
+			"style": {
+				"navigationBarTitleText": "用户协议",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/shop/shopPage",
+			"style": {
+				"navigationBarTitleText": "我的觅活小店",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/shop/addService",
+			"style": {
+				"navigationBarTitleText": "添加服务",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/shop/addCase",
+			"style": {
+				"navigationBarTitleText": "添加案例",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/shop/caseDetails",
+			"style": {
+				"navigationBarTitleText": "案例详情",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/shop/serviceDetails",
+			"style": {
+				"navigationBarTitleText": "服务详情",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/communicationRecord/addRecord",
+			"style": {
+				"navigationBarTitleText": "沟通确认",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/orderReceiving/communicationRecord/recordList",
+			"style": {
+				"navigationBarTitleText": "沟通记录",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/disclosure/editRecord",
+			"style": {
+				"navigationBarTitleText": "编辑记录",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/integral/integralRule",
+			"style": {
+				"navigationStyle": "custom", // 取消本页面的导航栏
+				"navigationBarTextStyle": "black",
+				// "enablePullDownRefresh": false
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/integral/pointsDetails",
+			"style": {
+				"navigationBarTitleText": "积分明细",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/mine/integral/IntegralRuleList",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path": "pages/sopFileUpload/sopFileUpload",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		}, {
+			"path": "pages/wordPage/wordPage",
+			"style": {
+				"background": "rgba(0,0,0,0.3)",
+				"navigationBarTextStyle": "white",
+				"bounce": "none",
+				"app-plus": {
+					"animationType": "zoom-out",
+					"background": "rgba(0,0,0,0.3)",
+					"backgroundColor": "rgba(0,0,0,0.3)"
+				}
+			}
+		},
+		{
+			"path": "pages/quickBilling/billingList",
+			"style": {
+				"navigationBarTitleText": "快速预算",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/quickBilling/quickBillingDetails",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path": "pages/quickBilling/billingDetails",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"app-plus": {
+					"bounce": "none" // 将回弹属性关掉
+				}
+			}
+		},
+		{
+			"path": "pages/disclosePending/disclosePending",
+			"style": {
+				// "navigationBarTitleText": "待确认事项",
+				// "navigationStyle": "default",
+				// "navigationBarTextStyle": "black",
+				// "enablePullDownRefresh": false,
+				// "navigationBarBackgroundColor": "#FFFFFF",
+				// "bounce": "none"
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/expeditingRecord/expeditingRecord",
+			"style": {
+				"navigationBarTitleText": "催办记录",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/disclosure/disclosureConfirmation",
+			"style": {
+				"navigationBarTitleText": "交底确认",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/selectConstruction/selectConstruction",
+			"style": {
+				"navigationBarTitleText": "施工内容",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/selectConstruction/logDetails",
+			"style": {
+				"navigationBarTitleText": "施工日志",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/quickBilling/billingRecord",
+			"style": {
+				"navigationBarTitleText": "开单记录",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/pendingList/list",
+			"style": {
+				"navigationBarTitleText": "待处理事项",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/siteCollaboration/list",
+			"style": {
+				"navigationBarTitleText": "工地协作",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/siteCollaboration/add",
+			"style": {
+				"navigationBarTitleText": "发起协作",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/siteCollaboration/details",
+			"style": {
+				"navigationBarTitleText": "协作详情",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/site/siteList",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"bounce": "none" // 将回弹属性关掉
+			}
+		},
+		{
+			"path": "pages/construction/billingTemplate/list",
+			"style": {
+				"navigationBarTitleText": "开单模板",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/construction/billingTemplate/details",
+			"style": {
+				"navigationBarTitleText": "开单模板",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/demo/inventedList",
+			"style": {
+				"navigationBarTitleText": "demo",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		},
+		{
+			"path": "pages/paymentInAdvance/payment",
+			"style": {
+				"navigationBarTitleText": "预付款充值",
+				"navigationStyle": "default",
+				"navigationBarTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#FFFFFF",
+				"bounce": "none"
+			}
+		}
+
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"navigationStyle": "custom",
+		"animationDuration": "150",
+		"scrollIndicator": "none", // 不显示滚动条
+		"app-plus": {
+
+		}
+	},
+	"tabBar": {
+		"color": "#999",
+		"selectedColor": "#002FA5",
+		"fontWeight": 900,
+		"borderStyle": "white",
+		"backgroundColor": "#ffffff",
+		"fontSize": "12px",
+		"midButton": {
+			"height": "70px",
+			"iconWidth": "40px",
+			"text": "发布需求",
+			"iconPath": "static/images/release1.png"
+		},
+		"list": [{
+				"pagePath": "pages/home/home",
+				"iconPath": "static/images/tabBar/home_1.png",
+				"selectedIconPath": "static/images/tabBar/home.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/order/newOrder",
+				"iconPath": "static/images/tabBar/classification_1.png",
+				"selectedIconPath": "static/images/tabBar/classification.png",
+				"text": "订单"
+			},
+			{
+				"pagePath": "pages/message/index",
+				"iconPath": "static/images/tabBar/notice_1.png",
+				"selectedIconPath": "static/images/tabBar/notice.png",
+				"text": "消息"
+			},
+			{
+				"pagePath": "pages/mine/personalCenter",
+				"iconPath": "static/images/tabBar/user_1.png",
+				"selectedIconPath": "static/images/tabBar/user.png",
+				"text": "我的"
+			}
+		]
+	},
+	"condition": { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [{
+			"name": "", //模式名称
+			"path": "",
+			"query": "" //启动参数，在页面的onLoad函数里面得到
+		}]
+	}
+}

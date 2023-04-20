@@ -1,0 +1,111 @@
+<template>
+	<view class="update-content">
+		<view class="content-text">
+			<view class="title"><text style="color: #002FA5;text-align: center;">口令详细信息查看</text></view>
+			<view class="list">
+				<text class="item-list" :key="index">{{item}}</text>
+				<button @click="goDetail()" class="up_button"><text class="button_text">现在查看</text></button>
+			</view>
+		</view>
+		<image @click="close()" src="/static/images/transport_close.png" class="close_image"></image>
+	</view>
+</template>
+<script>
+	import common from '@/config/common.js'
+	export default {
+		components: {
+
+		},
+		data() {
+			return {
+				item:'您的剪切板里有觅活口令信息'
+			}
+		},
+		onLoad(options) {
+			
+		},
+		methods: {
+			close() {
+				uni.navigateBack();
+			},
+			goDetail(){
+				const pageUrl = uni.getStorageSync('wordPageUrl')
+				uni.removeStorageSync('wordPageUrl')
+				uni.redirectTo({
+					url: pageUrl
+				});
+			}
+		}
+	}
+</script>
+<style lang="scss">
+	.update-content {
+		margin: 400rpx 75rpx;
+		padding: 220rpx 0 0 0;
+
+		.content-text {
+			background-color: #fff;
+			border-radius: 20rpx;
+			padding: 20rpx 0;
+		}
+
+		.list {
+			background-color: #fff;
+			padding: 0 38rpx 0rpx 38rpx;
+			border-radius: 0 0 20rpx 20rpx;
+			width: 600rpx;
+			overflow: hidden;
+
+			.item-title {
+				font-family: PingFang SC;
+				font-style: normal;
+				font-weight: bold;
+				font-size: 30rpx;
+				line-height: 42rpx;
+				color: #303133;
+			}
+
+			.item-list {
+				font-family: PingFang SC;
+				font-style: normal;
+				font-weight: normal;
+				font-size: 26rpx;
+				line-height: 36rpx;
+				color: #909199;
+				padding: 10rpx 0;
+			}
+
+			.up_button {
+				background: #fff;
+				border-radius: 35rpx;
+				border: 1px solid #002FA5;
+				line-height: 72rpx;
+				margin: 20rpx 40rpx;
+				.button_text {
+					color: #002FA5;
+					height: 70rpx;
+					line-height: 70rpx;
+					font-size: 32rpx;
+				}
+			}
+		}
+
+		.close_image {
+			width: 60rpx;
+			height: 60rpx;
+			text-align: center;
+			margin: 20rpx 270rpx;
+		}
+
+		.bg_image {
+			width: 600rpx;
+			height: 60rpx;
+			z-index: -1;
+		}
+
+		.title {
+			text-align: center;
+			padding-top: 20rpx;
+		}
+	}
+</style>

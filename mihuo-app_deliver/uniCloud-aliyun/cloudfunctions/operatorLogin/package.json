@@ -1,0 +1,7 @@
+{
+  "name": "operatorLogin",
+  "dependencies": {},
+  "extensions": {
+    "uni-cloud-jql": {}
+  }
+}

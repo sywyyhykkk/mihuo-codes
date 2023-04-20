@@ -1,0 +1,49 @@
+version: '3'
+services:
+  mihuo-enterprise:
+    build:
+      context: .
+      args:
+        CLIENT: enterprise
+    restart: always
+    container_name: mihuo-enterprise
+    image: swr.cn-east-3.myhuaweicloud.com/mihuo/mihuo-enterprise
+    networks:
+      - mihuo_default
+    external_links:
+      - mihuo-gateway
+    ports:
+      - 9001:80
+  mihuo-cityoperator:
+    build:
+      context: .
+      args:
+        CLIENT: cityoperator
+    restart: always
+    container_name: mihuo-cityoperator
+    image: swr.cn-east-3.myhuaweicloud.com/mihuo/mihuo-cityoperator
+    networks:
+      - mihuo_default
+    external_links:
+      - mihuo-gateway
+    ports:
+      - 9000:80
+  mihuo-admin:
+    build:
+      context: .
+      args:
+        CLIENT: admin
+    restart: always
+    container_name: mihuo-admin
+    image: swr.cn-east-3.myhuaweicloud.com/mihuo/mihuo-admin
+    networks:
+      - mihuo_default
+    external_links:
+      - mihuo-gateway
+    ports:
+      - 9002:80
+
+# 加入到后端网络， 默认为 pigx_default  | docker network ls   查看
+networks:
+  mihuo_default:
+    external: true

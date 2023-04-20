@@ -1,0 +1,66 @@
+<template>
+    <view>
+        <map style="width:100%;height:400rpx;z-index:9" id='map' :scale='map.scale' :show-location='map.showLocation' :longitude='map.longitude'
+			:latitude='map.latitude' :width='map.width' :height='map.height'
+			:markers='map.markers'>
+            <cover-image @click="goBackPage()" src="@/pages-findMaster/static/icon/work_type/back.png" class="icon-left"></cover-image>
+			<cover-image src="@/pages-findMaster/static/images/icon_position.png" class="icon-img"></cover-image>
+		</map>
+    </view>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            map:{}
+        };
+    },
+    onHide() {
+        uni.$off('updateData')
+    },
+   
+    onShow() {
+        // 接收全局传参-通信
+        uni.$on('updateData', (data) => {
+            this.map = data
+        })
+    },
+    methods: {
+       goBackPage() {
+            uni.$emit('goBackPage')
+        },
+        find(){
+            uni.$emit('find')
+        }
+    },
+};
+</script>
+
+<style scoped lang="scss">
+// .map,
+// 	map {
+// 		width: 100%;
+// 		height: 400rpx;
+// 		position: absolute;
+// 		left: 0;
+// 		right: 0;
+// 		top: 0;
+//         bottom: 0;
+// 	}
+	.icon-img {
+		width: 36px;
+		height: 36px;
+		display: block;
+		position: absolute;
+		top: 80px;
+		left: 370rpx;
+	}
+    .icon-left{
+		width: 35px;
+		height: 35px;
+		position: absolute;
+		top: 50rpx;
+		left: 20rpx;
+	}
+</style>

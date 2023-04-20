@@ -1,0 +1,515 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+//序号
+.li-number {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(90deg, rgba(245, 108, 108, 0.1), rgba(245, 108, 108, 0.4));
+  border-radius: 50%;
+  font-size: 12px;
+  color: #F56C6C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.li-number__primary {
+  background: linear-gradient(90deg, rgba(64, 158, 255, 0.15), rgba(64, 158, 255, 0.45));
+  color: #409EFF;
+}
+
+.li-number__warning {
+  background: linear-gradient(90deg, rgba(242, 170, 61, 0.1), rgba(242, 170, 61, 0.4));
+  color: #F2AA3D;
+}
+
+.medal-ranking {
+  width: 20px;
+  height: 27px;
+}
+
+//今日巡检验收执行
+.inspection-today {
+  height: 50%;
+
+  ul {
+    padding: 0 3rem 0 2.5rem;
+    height: 100%;
+    overflow-y: auto;
+
+    li {
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .li-skill-name {
+        font-size: 12px;
+        color: #409EFF;
+        display: flex;
+        align-items: center;
+        width: 10rem;
+        //justify-content: center;
+
+        .skill-name-avatar {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+        }
+
+        .skill-name-text {
+          font-size: 14px;
+          color: #FFFFFF;
+          margin-left: 10px;
+        }
+      }
+
+      .check-number {
+        font-size: 12px;
+        color: #F2AA3D;
+        width: 9rem;
+        display: flex;
+        justify-content: right;
+      }
+
+      .acceptance-number {
+        font-size: 12px;
+        color: #67C23A;
+        width: 9rem;
+        display: flex;
+        justify-content: right;
+      }
+
+      .no-number {
+        font-size: 12px;
+        color: #909399;
+      }
+    }
+  }
+}
+
+.body-height {
+  height: 340px;
+}
+
+//在建工地延期情况
+.site-delay {
+  height: 50%;
+  position: relative;
+
+  .site-delay-scroll {
+    width: 100%;
+    overflow-y: hidden;
+    padding: 0 3rem;
+  }
+
+  ul {
+    //-webkit-animation: up-down-by 30s linear infinite;
+    //animation: up-down-by 30s linear infinite;
+
+    li {
+      display: flex;
+      //justify-content: center;
+      align-items: center;
+
+      .li-right {
+        margin-left: 12px;
+
+        .li-title_1 {
+          font-size: 14px;
+          color: #FFFFFF;
+          height: 3rem;
+          border-left: solid 1px #051C48;
+          margin-left: 2px;
+          display: flex;
+          align-items: flex-end;
+          padding-bottom: 5px;
+          padding-left: 12px;
+        }
+
+        .li-title_2 {
+          font-size: 14px;
+          color: #303133;
+          height: 3rem;
+          border-left: solid 1px #E4E7ED;
+          margin-left: 2px;
+          display: flex;
+          align-items: flex-end;
+          padding-bottom: 5px;
+          padding-left: 12px;
+        }
+
+        .li-dot {
+          width: 5px;
+          height: 5px;
+          background: #F56C6C;
+          border-radius: 50%;
+        }
+
+        .li-data_1 {
+          padding-top: 5px;
+          font-size: 12px;
+          color: rgba(255, 255, 255, 0.4);
+          height: 3rem;
+          border-left: solid 1px #051C48;
+          padding-left: 10px;
+          margin-left: 2px;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .li-data_2 {
+          padding-top: 5px;
+          font-size: 12px;
+          color: #909399;
+          height: 3rem;
+          border-left: solid 1px #E4E7ED;
+          padding-left: 10px;
+          margin-left: 2px;
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+
+    }
+  }
+}
+
+//工地无人情况//工地收款预警
+.site-no-one {
+  height: 50%;
+
+  ul {
+    padding: 0 0 0 3rem;
+    height: 100%;
+    overflow-y: auto;
+
+    li {
+      display: flex;
+      width: 100%;
+      height: 45px;
+      border-bottom: solid 1px #051C48;
+      justify-content: space-between;
+      padding: 1.5rem 0;
+
+      .site-collection-data {
+        font-size: 12px;
+        color: #F2AA3D;
+        display: flex;
+        height: 20px;
+        align-items: center;
+        width: 40%;
+        justify-content: space-between;
+        padding-right: 3rem;
+
+        .data-tage {
+          height: 18px;
+          background: linear-gradient(90deg, #F2AA3D, #F56C6C);
+          border-radius: 2px;
+          line-height: 18px;
+          font-size: 12px;
+          color: #FFFFFF;
+          padding: 0 5px;
+        }
+      }
+
+      .li-content {
+        width: calc(100% - 20rem);
+      }
+
+      .li-address_1 {
+        font-size: 14px;
+        color: #FFFFFF;
+        margin-left: 1.2rem;
+        margin-top: 3px;
+      }
+
+      .li-address_2 {
+        font-size: 14px;
+        color: #303133;
+        margin-left: 1.2rem;
+        margin-top: 3px;
+      }
+
+      .li-data-no-one_1 {
+        padding-top: 5px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.4);
+        height: 3rem;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+
+        div {
+          width: 50%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+
+      .li-data-no-one_2 {
+        padding-top: 5px;
+        font-size: 12px;
+        color: #909399;
+        height: 3rem;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+
+        div {
+          width: 50%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+
+    }
+  }
+
+  .progess-info {
+    display: flex;
+    font-size: 12px;
+    color: #F56C6C;
+    align-items: center;
+    justify-content: space-between;
+    width: 17rem;
+    height: 20px;
+
+    .progess-value {
+      width: 100px;
+      height: 6px;
+      background: #F56C6C;
+      border-radius: 3px;
+    }
+
+    .progess-text {
+      margin-left: 10px;
+    }
+  }
+
+}
+
+
+//定制品异常工地排行//主材配合异常//辅材配合异常
+.advocate-material, .auxiliary-material {
+  height: 50% !important;
+
+  ul {
+    padding-right: 3rem;
+  }
+}
+
+.fixed-product-anomaly {
+  height: 100%;
+
+  ul {
+    height: 100%;
+    overflow-y: hidden;
+    padding-left: 3rem;
+
+
+    li {
+      padding: 2rem 0;
+      //width: 100%;
+      border-bottom: #051C48 solid 1px;
+      display: flex;
+      flex-flow: column;
+
+      .li-data-all {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .li-data-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+
+        .days-overdue {
+          font-size: 12px;
+          color: #F56C6C;
+          width: 35%;
+
+          span {
+            margin-right: 10px;
+          }
+
+          .overdue-img {
+            margin-right: 5px;
+            width: 14px;
+            height: 12px;
+          }
+        }
+
+        .item-status_1 {
+          font-size: 12px;
+          color: rgba(255, 255, 255, 0.6);
+          width: 40%;
+          text-align: right;
+        }
+
+        .item-status_2 {
+          font-size: 12px;
+          color: rgba(144, 147, 153, 0.6);
+          width: 40%;
+          text-align: right;
+        }
+
+        .custom-made {
+          display: flex;
+          align-items: center;
+
+          .custom-made-img {
+            width: 15px;
+            height: 15px;
+          }
+
+          .custom-made-text_1 {
+            font-size: 12px;
+            color: #FFFFFF;
+            margin-left: 10px;
+          }
+
+          .custom-made-text_2 {
+            font-size: 12px;
+            color: #303133;
+            margin-left: 10px;
+          }
+        }
+      }
+
+
+      .li-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .li-head-text {
+          font-size: 12px;
+          color: #409EFF;
+        }
+
+        .li-head-title {
+          display: flex;
+          align-items: center;
+
+          .li-num {
+            width: 17px;
+            height: 17px;
+            background: #0969DA;
+            border-radius: 2px;
+            text-align: center;
+            line-height: 17px;
+          }
+
+          .li-text-title_1 {
+            font-size: 14px;
+            font-weight: bold;
+            color: #FFFFFF;
+            margin-left: 10px;
+          }
+
+          .li-text-title_2 {
+            font-size: 14px;
+            font-weight: bold;
+            color: #303133;
+            margin-left: 10px;
+          }
+        }
+      }
+
+
+    }
+  }
+}
+
+//上下轮播样式
+@keyframes up-down-by {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@-webkit-keyframes up-down-by {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+    transform: translateY(-100%);
+  }
+}
+
+//轮播图动画样式
+.my-carousel {
+  height: 100%;
+  -webkit-animation: slide-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: slide-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-top {
+  0% {
+    -webkit-transform: translateX(300px);
+    transform: translateX(300px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-top {
+  0% {
+    -webkit-transform: translateX(300px);
+    transform: translateX(300px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+
+//直线统计进度条动画样式函数
+.keyframesFunction (@name,@content) {
+  @keyframes @name {
+    @content();
+  }
+  @-webkit-keyframes @name {
+    @content();
+  }
+}
+
+
+//点轮播
+.carousel-data {
+  height: 50px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  .carousel-dto-active {
+    background: #0969DA !important;
+  }
+
+  .carousel-dto {
+    width: 6px;
+    height: 6px;
+    background: #E4E7ED;
+    border-radius: 50%;
+    margin: 0 5px;
+  }
+}

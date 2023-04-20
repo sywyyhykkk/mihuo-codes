@@ -1,0 +1,129 @@
+//这里的颜色除了主色还有业务色，业务色可以单独命名即使色号和主色相同
+//下面的px全部转换成为rem ，10px = 1rem
+//主色
+@mainColor: #0969DA;
+@firstAuxiliaryColor: #409EFF;
+@AuxiliaryBorderColor: #D9ECFF;
+@AuxiliaryBackgroundColor: #ECF5FF;
+//登陆按钮颜色
+@loginButtonColor:#112C85;
+//渐变相关
+@GradualLeft: #228FFE;
+@GradualRight: #52C5FF;
+//一级菜单缩进 和二级菜单缩进
+@menuIndent:1rem;
+//成功相关、完成等
+@completeColor: #2DA44E;
+@successColor: #67C23A;
+@successBorderColor: #E1F3D8;
+@successBackColor: #F0F9EB;
+//警告相关
+@cautionColor: #F2AA3D;
+@cautionBorderColor: #FAECD8;
+@cautionBacColor: #FDF6EC;
+//错误相关的
+@errorColor: #F56C6C;
+@errorBorderColor: #FDE2E2;
+@errorBackColor: #FEF0F0;
+//这是文字颜色和一些背景色 主要是黑灰色系列
+@mainBlackColor: #1A1A1A;
+@mainSeconBlackColor: #262626;
+@mainThirdBlackColor: #303133;
+//从这里开始下面的就是业务所用颜色，在你不确定你的使用颜色当主色改变时业务颜色会跟着变化，那么业务颜色尽量自己命名
+//业主
+@customerColor: #B965E0;
+@customerBorderColor: #EAD8F2;
+@customerBackColor: #F5EBFA;
+//table的颜色字体 背景等颜色
+@tableFontColor: #4C4C4C;
+@tableTitleFontColor: #909399;
+@tableBorderColor: #E4E7ED;
+@tableBackColor: #F3F4F8;
+@tableTitle: #f5f7fa;
+//toast文字颜色
+@toastFontColor: #C0C4CC;
+//分割线颜色
+@dividerColor: #F5F7FA;
+//nav分割线颜泽
+@navDividerColor: #F3F4F8;
+//tag分割线颜色
+@tagDividerColor: #EDEDEE;
+//分割线颜色
+@pageDividerColor: #E4E7ED;
+// Silder
+@menuText: #4C4C4C;
+@menuActiveText: #0969DA;
+@menuActiveBg: #ECF5FF;
+@menuBg: #fff;
+@subMenuBg: #fff;
+@subMenuHover: #F3F4F8;
+@subMenuActiveText: #0969DA;
+//Menu
+@menuWidth: 24rem;
+@menuMinWidth: 6.4rem;
+//Menu的圆角
+@menuRadius: 0.2rem;
+// topSider
+@topSiderHeight: 6rem; // 最低60px，element的最小高度。
+@topMenuText: #303133;
+@topMenuActiveText: #ECF5FF;
+@topMenuActiveBg: #fff;
+@topMenuBg: #fff;
+@topSubMenuBg: #1f2d3d;
+@topSMenuHover: #F3F4F8;
+@topSMenuActiveText: #ECF5FF;
+
+// meunTab
+@menuTabWidth: 24rem;
+@menuTabItemHeight: 7rem;
+@menuTabBg: #fff;
+@menuTabText: black;
+@menuTabActiveBg: #ECF5FF;
+@menuTabActiveText: #4C4C4C;
+
+// menuTopTab
+@menuTopTabWidth: 12rem;
+@menuTopTabBg: #fff;
+@menuTopTabText: black;
+@menuTopTabActiveBg: #ECF5FF;
+@menuTopTabActiveText: #fff;
+
+// navbar
+@navbarHeight: 6rem;
+
+// tagsView
+@tagsViewHeight: 4.2rem;
+@tagActiveBg: #304156;
+
+// content
+@contentBg: #fff;
+@contentBg2: #0969DA;
+@appBg: #fff;
+
+// html body
+@minWidth: 85rem;
+
+//logo页背景色
+@menuLogoBc: #001529;
+//按钮字体颜色
+@buttonText: #fff;
+//这里是字体的大小------------------------------------
+@miniFontSize:1.2rem;
+@fefaultFontSize:1.4rem;
+
+
+
+// deep 已经弃用
+@deep: ~':v-deep';
+
+// the :export directive is the magic sauce for webpack
+export {
+  menuText: @menuText;
+  menuActiveText: @menuActiveText;
+  menuActiveBg: @menuActiveBg;
+  menuBg: @menuBg;
+  subMenuBg: @subMenuBg;
+  subMenuHover: @subMenuHover;
+  menuWidth: @menuWidth;
+  menuMinWidth: @menuMinWidth;
+}

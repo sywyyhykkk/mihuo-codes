@@ -1,0 +1,39 @@
+.DS_Store
+.jsbeautifyrc
+node_modules
+/dist
+/dist-dev
+/dist-pro
+/dist-test
+/dist-admin
+/dist-cityoperator
+/dist-enterprise
+/dist-admin-dev
+/dist-cityoperator-dev
+/dist-enterprise-dev
+/tests/e2e/videos/
+/tests/e2e/screenshots/
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+.history
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
+# Lock File
+package-lock.json
+yarn.lock
+components.d.ts

@@ -1,0 +1,244 @@
+<template>
+	<view>
+		<swiper class="swiper-box" @change="change">
+			<swiper-item v-for="(item ,index) in $store.state.waitOrderList" :key="index" style="height: 150px;">
+				<view class="card">
+					<image style="position: absolute; left: 0; top: 0; right: 0; bottom: 0;width:100%;height: 750rpx;"
+						src="/static/images/message_model_bg.png"></image>
+					<view class="avatar-content">
+						<image class="avatar" src="https://img2.baidu.com/it/u=2288154050,1961487294&fm=26&fmt=auto"
+							mode="square">
+							</u-avatar>
+							<text
+								class="title">{{item.contactName || ''}}{{item.contactGender==1?'先生':'女士'}}邀请您确认订单</text>
+							<image class="close-icon" @click="close(item)" src="/static/images/icon_close/close.png"></image>
+					</view>
+					<view>
+						<view class="imageContent">
+							<image class="order-image"
+								src="https://img1.baidu.com/it/u=1687330972,1078946315&fm=26&fmt=auto"></image>
+						</view>
+						<view>
+							<view class="mini-title">
+								<view style="flex: 1;">
+									<text class="ordertype">{{item.requirementTypeName || ''}}</text>
+								</view>
+								<view>
+									<text class="ordermoney">{{item.price || 0}}元</text>
+								</view>
+							</view>
+							<view><text class="order-no">订单号：{{item.orderCode || '暂无单号'}}</text>
+							</view>
+							<view><text class="address">施工地址：{{item.address || ''}}</text></view>
+						</view>
+					</view>
+					<view class="footer">
+						<view class="actionButton">
+							<button class="cancel" @click="goDetail(item)" type="default" style="background-color: #fff">
+								<text class="detailText">查看详情</text>
+							</button>
+							<button @click="confirmOrder(item)" class="sure"
+								style="background-image:linear-gradient(to right,#002FA5 , #002FA5)">
+								<text class="sureText">立即确认</text>
+							</button>
+						</view>
+					</view>
+				</view>
+			</swiper-item>
+		</swiper>
+	</view>
+</template>
+
+<script>
+	import base from '@/config/baseUrl';
+	export default {
+		data() {
+			return {
+				current: 0,
+				mode: 'round',
+			}
+		},
+		onLoad() {},
+		methods: {
+			change(e) {
+				this.current = e.detail.current;
+			},
+			// 查看详情
+			goDetail(item) {
+				// 关闭以后跳转至订单详情
+				this.close(item)
+				uni.navigateTo({
+					url: `/pages/orderReceiving/orderReceiving?id=${item.id}&typeName=接单详情`
+				});
+			},
+			// 确定
+			confirmOrder(item) {
+				const userInfo = uni.getStorageSync('userInfo');
+				let header;
+				if (userInfo) {
+					header = {
+						'Content-Type': 'application/json;charset=UTF-8',
+						'Authorization': userInfo.token_type + ' ' + userInfo.access_token,
+						'VERSION': base.apiVersion
+					}
+				}
+				uni.request({
+					url: base.baseUrl + `order/bidorder/modifyMessage`,
+					method: 'post',
+					header: header,
+					data: {
+						"businessKey": 4,
+						"contentType": 2,
+						"id": item.bidId
+					},
+					success: res => {
+						uni.showToast({
+							title: '确认成功',
+							icon: 'none'
+						})
+						this.close(item);
+					},
+					fail: (e) => {
+						console.log("getMachineNum fail:" + JSON.stringify(e));
+					},
+					complete: () => {}
+				});
+			},
+			//单个关闭事件
+			close(item) {
+				let index = this.$store.state.waitOrderList.findIndex(data => data.bidId == item.bidId);
+				this.$store.state.waitOrderList.splice(index, 1);
+				if (!this.$store.state.waitOrderList.length) {
+					// uni.navigateBack();
+					uni.reLaunch({
+						url: '../home/home'
+					})
+				}
+			}
+		},
+	}
+</script>
+
+<style scoped lang="scss">
+	.swiper-box {
+		height: 1200rpx;
+		margin-top: 200vh;
+	}
+
+	.card {
+		padding: 34rpx 72rpx;
+		border-radius: 20rpx;
+		background-color: #fff;
+		margin: 0 50rpx;
+		position: relative;
+	}
+
+	.card .close-icon {
+		position: absolute;
+		top: -10rpx;
+		right: -20rpx;
+		width: 50rpx;
+		height: 50rpx;
+	}
+
+	.avatar-content {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 20rpx;
+	}
+
+	.avatar-content .title {
+		font-size: 16px;
+		line-height: 18px;
+		color: $seconFontColor;
+		flex: 1;
+		margin-left: 16rpx;
+	}
+
+	.cancel {
+		border: 1px solid #EEEEEE;
+		border-radius: 5px;
+		color: #666;
+		background-color: #0062CC;
+		font-size: 16px;
+	}
+
+	.sure {
+		color: #fff;
+		background-color: #000000;
+		margin-left: 76px;
+	}
+
+	.mini-title {
+		font-weight: normal;
+		font-size: 12rpx;
+		line-height: 16rpx;
+		color: #909299;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		margin-top: 20rpx;
+	}
+
+	.order-image {
+		width: 500rpx;
+		height: 600rpx;
+		border-radius: 20rpx;
+	}
+
+	.ordertype {
+		font-size: 28rpx;
+		line-height: 32rpx;
+		color: $seconFontColor;
+	}
+
+	.ordermoney {
+		font-weight: bold;
+		font-size: 30rpx;
+		line-height: 32rpx;
+		color: $themeColor;
+	}
+
+	.order-no,
+	.address {
+		font-family: PingFang SC;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 24rpx;
+		line-height: 40rpx;
+		color: #909299;
+	}
+
+	.sureText {
+		color: #FFFFFF;
+		font-size: 28rpx;
+	}
+
+	.detailText {
+		color: #999;
+		font-size: 28rpx;
+	}
+
+	.avatar {
+		border-radius: 50%;
+		width: 50rpx;
+		height: 50rpx;
+	}
+
+	.actionButton {
+		margin-top: 30rpx;
+		height: 60rpx;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.cancel,
+	.sure {
+		height: 60rpx;
+		line-height: 60rpx;
+		width: 180rpx;
+		background-color: #18B566;
+	}
+</style>

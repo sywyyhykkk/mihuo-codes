@@ -1,0 +1,66 @@
+<template>
+	<view class="tag-list" @click="getShow()" v-if="showStatus">
+		<image class="img" src="@/pages-common/static/images/case/lb.png" mode=""></image>
+		<text class="text">列表</text>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				showStatus: true
+			}
+		},
+		onLoad() {},
+		methods: {
+			getShow() {
+				// 隐藏卡片
+				const subNVue = uni.getSubNVueById('consumerSiteService')
+				subNVue.hide('slide-out-bottom', 300);
+				// 隐藏列表按钮
+				const tableswitch = uni.getSubNVueById('tableswitch')
+				tableswitch.hide('slide-out-right', 300);
+				uni.getSystemInfo({
+					success: function(res) {
+						uni.setStorageSync('screenHeight',res.screenHeight)
+						// 显示列表
+						const verticalList = uni.getSubNVueById('verticalList')
+						verticalList.show('fade-in', 100, function() {
+						
+						})
+						verticalList.setStyle({
+							height: '444'
+						})
+					}
+				});
+			}
+		}
+	}
+</script>
+
+<style lang="scss" scoped>
+	.tag-list {
+		background: #FFFFFF;
+		box-shadow: 0rpx 0rpx 4rpx rgba(154, 154, 154, 0.25);
+		border-radius: 5rpx;
+		width: 96rpx;
+		height: 106rpx;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+
+		.img {
+			width: 38rpx;
+			height: 36rpx;
+		}
+
+		.text {
+			font-weight: bold;
+			font-size: 26rpx;
+			line-height: 36rpx;
+			color: #606166;
+		}
+	}
+</style>

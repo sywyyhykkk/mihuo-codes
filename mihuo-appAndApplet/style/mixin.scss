@@ -1,0 +1,132 @@
+@charset "utf-8";
+@import './theme.scss';
+//主题色
+$themeColor: #ff5d35;
+$auxiliaryColor: #FF9A52;
+$themeBg: #FFFFFF;
+$darkTitle: #333;
+$fontColor33:#333;
+$fontColor66:#666;
+$fontColor99:#999;
+$fontColor80:#808080;
+$fontColor00:#000;
+$fontColorPrice:#FE6E32;
+
+//常用黑色字体
+$mainFontColor:#606266;
+$mainFontColor14:#141414;
+$seconFontColor:#303133;
+$viceFontColor:#909191;
+
+// 异常文字颜色
+$errorFontColor:#FF5D35;
+
+//字体大小
+$mainFontSize:32rpx;
+$fontSize36:36rpx;
+$fontSize30:30rpx;
+$fontSize46:46rpx;
+$largeTitleSize:48rpx;
+$middleFontSize:28rpx;
+$fontSize26:26rpx;
+$fontSize28:28rpx;
+$fontSize22:22rpx;
+$smallFontSize:24rpx;
+
+
+//圆角大小
+$maxBorderRadius:30rpx;
+$mainBorderRadius:20rpx;
+$middleBorderRadius:16rpx;
+$smallBorderRadius:12rpx;
+$miniBorderRadius:10rpx;
+
+//线条颜色
+$borderColor:#f4f4f5;
+$borderColorEE:#eeeeee;
+
+
+@mixin theme($type,$path: ''){
+	@if $type == "btn_bg" {
+		background-image: linear-gradient(90deg,#FF9A52 0%,#ff5d35 100%);
+	} @else if $type == "unselected_img" {
+		background-image: url($path + "https://www.51mihuo.com/static/icon/ic_gender_unselected.png");
+	} @else if $type == "check_img" {
+		background-image: url($path + "https://www.51mihuo.com/static/icon/ic_agreed.png");
+	} @else if $type == "radio_img" {
+		background-image: url($path + "https://www.51mihuo.com/static/icon/ic_gender_selected.png");
+	}
+}
+
+// 背景图片地址和大小
+@mixin bis($url, $size: cover) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: $size;
+}
+
+// 头像
+@mixin ic($width, $height) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  width: $width;
+  height: $height;
+}
+
+// 单行省略号
+@mixin toe() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 多行省略号
+@mixin bov($num:2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $num;
+  -webkit-box-orient: vertical;
+}
+
+// 导航栏标题
+@mixin nav-bar-title($fontColor: #303133) {
+	font-family: PingFang SC;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 32rpx;
+	line-height: 50rpx;
+	text-align: center;
+	color: $fontColor;
+}
+
+//安全区处理
+@mixin safearea(){
+	bottom: 0;
+	bottom: calc(constant(safe-area-inset-bottom));
+	bottom: calc(env(safe-area-inset-bottom));  
+}
+
+// 底部悬浮按钮的padding处理
+@mixin buttonsafearea(){
+	bottom: 0;
+	padding-bottom: constant(safe-area-inset-bottom);
+	padding-bottom: env(safe-area-inset-bottom);  
+}
+
+//公共确认按钮样式
+@mixin button {
+	line-height: 80rpx;
+	height: 80rpx;
+	border-radius: 10rpx;
+	background:#424242;
+	display: flex;
+	justify-content: center;
+	font-size: 28rpx;
+	font-weight: bold;
+	color: #FFFFFF;
+}

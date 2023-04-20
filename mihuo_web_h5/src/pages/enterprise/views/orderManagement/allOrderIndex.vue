@@ -1,0 +1,11 @@
+<template>
+  <mallOrderIndex />
+</template>
+<script>
+import { defineComponent } from 'vue'
+export default defineComponent({
+  setup() {}
+})
+</script>
+<style scoped>
+</style>
